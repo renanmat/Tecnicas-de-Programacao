@@ -1,6 +1,5 @@
 #include "Principal.hpp"
 
-
 int main(){
     
     Principal objPrincipal;
