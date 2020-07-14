@@ -36,7 +36,18 @@ void Pessoa::calc_idade(int diaAt, int mesAt, int ano_atual){
         {
             if(dia > diaAt) idade -= 1;
         }
-    cout<<nome<<" teria "<<idade<<" anos de idade."<<endl;
+    
+}
+
+void Pessoa::imprime_idade()
+{
+    cout<<nome<<" tem "<<idade<<" anos de idade."<<endl;
+}
+
+void Pessoa::calc_imprime_idade(int diaAt, int mesAt, int ano_atual)
+{
+    calc_idade(diaAt,mesAt,ano_atual);
+    imprime_idade();
 }
 
 int Pessoa::getIdade()

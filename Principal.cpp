@@ -34,6 +34,8 @@ Principal::Principal():
     //Associa os obj departamento a obj pessoa
     Einstein.setDepartamento(&Fisica);
     Newton.setDepartamento(&Matematica);
+
+    executar();
 }
 
 Principal::~Principal()
@@ -43,8 +45,8 @@ Principal::~Principal()
 
 void Principal::executar()
  {
-    Newton.calc_idade(diaAt,mesAt,anoAt);
-    Einstein.calc_idade(diaAt,mesAt,anoAt);
+    Newton.calc_imprime_idade(diaAt,mesAt,anoAt);
+    Einstein.calc_imprime_idade(diaAt,mesAt,anoAt);
     
     cout<<endl;
 

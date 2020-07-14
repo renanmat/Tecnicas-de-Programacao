@@ -1,10 +1,9 @@
 #include "Principal.hpp"
 
-int main(){
+int main()
+{
     
     Principal objPrincipal;
-
-    objPrincipal.executar();
 
     return 0;
 }

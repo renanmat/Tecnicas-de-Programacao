@@ -25,7 +25,11 @@ class Pessoa{
         Pessoa();
         ~Pessoa();
         void inicializa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
+        //calcular e imprimir idade
+
         void calc_idade(int diaAt, int mesAt, int ano_atual);
+        void imprime_idade();
+        void calc_imprime_idade(int diaAt, int mesAt, int ano_atual);
         int getIdade();
 
         //metodo que permite associar uma Universidade a uma Pessoa
