@@ -7,7 +7,8 @@ Principal::Principal():
     Princeton("Princeton"),
     Cambridge("Cambridge"),
     Fisica("Fisica"),
-    Matematica("Matematica")
+    Matematica("Matematica"),
+    Astronomia("Astronomia")
 {  
 
     //Ponteiro que armazena data e hora
@@ -28,8 +29,14 @@ Principal::Principal():
     Einstein.setUniversidade(&Princeton);
 
     //agrega departamento a uma ao obj Universidade
-    Princeton.setDepart(Fisica);
-    Cambridge.setDepart(Matematica);
+    Princeton.setDepart(&Fisica);
+    Princeton.setDepart(&Astronomia);
+    Cambridge.setDepart(&Matematica);
+
+    //Departamento referencia a universidade que esta filiado
+    Fisica.setUniversidade(&Princeton);
+    Astronomia.setUniversidade(&Princeton);
+    Matematica.setUniversidade(&Cambridge);
 
     //Associa os obj departamento a obj pessoa
     Einstein.setDepartamento(&Fisica);
@@ -45,7 +52,7 @@ Principal::~Principal()
 
 void Principal::executar()
  {
-    Newton.calc_imprime_idade(diaAt,mesAt,anoAt);
+   Newton.calc_imprime_idade(diaAt,mesAt,anoAt);
     Einstein.calc_imprime_idade(diaAt,mesAt,anoAt);
     
     cout<<endl;
@@ -57,4 +64,9 @@ void Principal::executar()
 
     Newton.infoDepartamento();
     Einstein.infoDepartamento();
+
+    cout<<endl;
+
+    Princeton.print_depart();
+    Cambridge.print_depart();
  }

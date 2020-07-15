@@ -17,6 +17,7 @@ class Principal
         //objeto classe departamento
         Departamento Fisica;
         Departamento Matematica;
+        Departamento Astronomia;
 
 
         int diaAt, mesAt, anoAt;
