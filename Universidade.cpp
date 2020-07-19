@@ -56,6 +56,6 @@ void Universidade::print_depart()
     //Imprime departamento ate encontrar um ponteiro nulo
     for(Departamento* i = pDepartamento[cont]; i != nullptr; i = pDepartamento[++cont])
     {
-        cout<<nome<<" departamento "<<i->getDepart()<<endl;
+        cout<<nome<<" departamento "<<i->getNome()<<endl;
     }
 }

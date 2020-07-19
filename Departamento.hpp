@@ -7,14 +7,21 @@ class Universidade;
 class Departamento
 {
     private:
-        char nome[30];
+        int id;
+        char nome[100];
         Universidade* pUniversidade;
     
     public:
-        Departamento(const char* pNome = "");
+        Departamento(const char* pNome = "", int i = 0);
+        Departamento();
         ~Departamento();
-        void setDepart(const char* pNome);
-        char* getDepart();
+
+        void setId(int i);
+        int getId();
+
+
+        void setNome(const char* pNome);
+        char* getNome();
 
         //reverencia a universidade que esta afiliada
         void setUniversidade(Universidade* pUni);

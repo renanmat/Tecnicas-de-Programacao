@@ -4,6 +4,8 @@
 Principal::Principal():
     Newton(4,1,1643, "Newton"),
     Einstein(14,3,1879, "Einstein"),
+    Renan(2189, 9, 5, 1995, "Renan M"),
+    Matheus(1234,9,8,2000,"Matheus"),
     Princeton("Princeton"),
     Cambridge("Cambridge"),
     Fisica("Fisica"),
@@ -54,7 +56,7 @@ Principal::~Principal()
 
 void Principal::executar()
  {
-   Newton.calc_imprime_idade(diaAt,mesAt,anoAt);
+    Newton.calc_imprime_idade(diaAt,mesAt,anoAt);
     Einstein.calc_imprime_idade(diaAt,mesAt,anoAt);
     
     cout<<endl;
@@ -71,4 +73,9 @@ void Principal::executar()
 
     Princeton.print_depart();
     Cambridge.print_depart();
+
+    cout<<endl;
+    Renan.calc_imprime_idade(diaAt,mesAt,anoAt);
+    Matheus.calc_imprime_idade(diaAt,mesAt,anoAt);
+
  }

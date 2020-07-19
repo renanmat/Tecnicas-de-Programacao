@@ -1,22 +1,38 @@
 #include "Departamento.hpp"
 
- Departamento::Departamento(const char* pNome)
+ Departamento::Departamento(const char* pNome, int i)
  {
+     id = i;
      strcpy(nome,pNome);
      pUniversidade = nullptr;
  }
 
-Departamento::~Departamento()
+Departamento::Departamento()
 {
-
+    pUniversidade = nullptr;
 }
 
-void Departamento::setDepart(const char* pNome)
+Departamento::~Departamento()
+{
+    pUniversidade = nullptr;
+}
+
+void Departamento::setId(int i)
+{
+    id = i;
+}
+
+int Departamento::getId()
+{
+    return id;
+}
+
+void Departamento::setNome(const char* pNome)
 {
     strcpy(nome, pNome);
 }
 
-char* Departamento::getDepart()
+char* Departamento::getNome()
 {
     return nome;
 }
