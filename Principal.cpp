@@ -31,10 +31,8 @@ Principal::Principal():
     Einstein.setUniversidade(&Princeton);
 
     //agrega departamento a uma ao obj Universidade
-    Princeton.set_quant_depart(2);
     Princeton.setDepart(&Fisica);
     Princeton.setDepart(&Astronomia);
-    Cambridge.set_quant_depart(1);
     Cambridge.setDepart(&Matematica);
 
     //Departamento referencia a universidade que esta filiado

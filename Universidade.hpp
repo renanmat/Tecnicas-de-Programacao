@@ -7,6 +7,10 @@
 using std::cout;
 using std::endl;
 
+//#include <vector> 
+#include <list>
+using namespace std;
+
 
 class Universidade
 {
@@ -14,8 +18,8 @@ class Universidade
         char nome[30];
 
         //agregando um obj Departamento na classe pessoa
-        Departamento **pDepartamento;
-        int cont_dep; // conta quantos departamentos foram agregados(agregaçao fraca por ponteiro) a universidade
+        //vector <Departamento*> lpDepart;
+        list <Departamento*> lpDepart;
 
     public:
         Universidade(const char *nome_uni = "");
@@ -25,8 +29,6 @@ class Universidade
         char *getNome();
 
         //metodo para agregar departamento
-        // set_quant_depart aloca dinamicamente a quantidade de departamentos sendo no maximo 50
-        void set_quant_depart(int quant);
         void setDepart(Departamento *pDepart);
         void print_depart();
 
