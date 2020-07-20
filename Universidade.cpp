@@ -18,8 +18,8 @@
 
 Universidade::~Universidade()
 {
-    //for(int i = 0; i<50; i++) pDepartamento[i] = nullptr; 
     free(pDepartamento);
+    pDepartamento = nullptr;
 }
 
 void Universidade::setNome(const char *nome_uni)
@@ -46,16 +46,25 @@ void Universidade::set_quant_depart(int quant)
 
 void Universidade::setDepart(Departamento* pDepart)
 {
-    pDepartamento[cont_dep]= pDepart;
-    cont_dep++;
+    if(pDepart != NULL)
+    {
+        pDepartamento[cont_dep]= pDepart;
+        cont_dep++;
+    }else
+    {
+        cout<<"Departamento nao adicionado a universidade, ";
+        cout<<"pois departamento é invalido(ponteiro para departamento é nulo)"<<endl;
+    }
+    
+    
 }
         
 void Universidade::print_depart()
 {
-    int cont = 0;
-    //Imprime departamento ate encontrar um ponteiro nulo
-    for(Departamento* i = pDepartamento[cont]; i != nullptr; i = pDepartamento[++cont])
+    
+    for(int i = 0; i < cont_dep; i++)
     {
-        cout<<nome<<" departamento "<<i->getNome()<<endl;
+        cout<<nome<<" departamento "<<pDepartamento[i]->getNome()<<endl;
     }
+
 }
