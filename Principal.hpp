@@ -3,33 +3,56 @@
 
 #include "Professor.hpp"
 #include "Aluno.hpp"
+#include "Disciplina.hpp"
 #include <time.h> // para pegar data atual do sistema
 
 class Principal
 {
     private:
-        //obj da classe professor que é dirivada da classe Pessoa
+        //Professores
         Professor Newton;
         Professor Einstein;
 
-        // objs da classe aluno que é dirivada da classe pessoa
+        // Alunos
         Aluno Renan, Matheus;
 
-        //Objetos da classe Universidades sao agregados aos objetos dessa classe(classe Principal) 
+        //Universidade
         Universidade Princeton;
         Universidade Cambridge;
+        Universidade UTFPR;
 
-        //objeto classe departamento
+        //Departamento
         Departamento Fisica;
         Departamento Matematica;
         Departamento Astronomia;
+        Departamento DAELN;
 
+        //Disciplina
+        Disciplina Computacao1_2006;
+        Disciplina Computacao2_2007;
+        Disciplina Introd_alg_2007;
+        Disciplina Metodos2_2007;
 
+        //Dia, mes e ano atuais(data informada pelo sistema)
         int diaAt, mesAt, anoAt;
 
     public:
         Principal();
         ~Principal();
+
+        void inicializa();
+        void inicializa_professor();
+        void inicializa_universidade();
+        void inicializa_departamento();
+        void inicializa_disciplina();
+
+        void infor_idadeProf();
+        void infor_idadeAluno();
+        void infor_ondeProfTrab();
+        void infor_DepartProf();
+        void infor_DepartsUniver();
+        void liste_Discp_de_Depart();
+
         void executar(); 
 };
 

@@ -15,9 +15,9 @@ using namespace std;
 class Universidade
 {
     private:
-        char nome[30];
+        char nome[100];
 
-        //agregando um obj Departamento na classe pessoa
+        //agregando(agregacao fraca) um obj Departamento na classe pessoa
         //vector <Departamento*> lpDepart;
         list <Departamento*> lpDepart;
 

@@ -3,6 +3,7 @@
 #include <string.h>
 
 class Universidade;
+class Disciplina;
 
 class Departamento
 {
@@ -10,6 +11,10 @@ class Departamento
         int id;
         char nome[100];
         Universidade* pUniversidade;
+        
+        //ponteiros para lista encadeada de disciplinas
+        Disciplina* pDiscPrim;
+        Disciplina* pDiscAtual;
     
     public:
         Departamento(const char* pNome = "", int i = 0);
@@ -25,6 +30,11 @@ class Departamento
 
         //reverencia a universidade que esta afiliada
         void setUniversidade(Universidade* pUni);
+
+        //agrega as disciplinas ao departamento
+        //atraves de lista escadeada
+        void inclui_disciplina(Disciplina* pd);
+        void liste_disciplinas();
 };
 
 #endif
