@@ -9,6 +9,7 @@ Disciplina::Disciplina(const char* ac)
     strcpy(nome, "");
     pDepartAssociado = nullptr;
     pProx = nullptr;
+    pAnt = nullptr; 
 
 }
 
@@ -16,6 +17,7 @@ Disciplina::~Disciplina()
 {
     pDepartAssociado = nullptr;
     pProx = nullptr;
+    pAnt = nullptr;
 }
 
 void Disciplina::set_nome(const char* n){ strcpy(nome, n); }
@@ -44,6 +46,9 @@ void Disciplina::set_departAssociado(Departamento* pd)
 }
 Departamento* Disciplina::get_departAssociado(){ return pDepartAssociado; }
 
-//get e set pata ponteiro pProx da lista encadeada
+//get e set pata ponteiros da Disciplina anterior e proxima de lista encadeada
 void Disciplina::set_pProx(Disciplina* pd){ pProx = pd; }
 Disciplina* Disciplina::get_pProx(){ return pProx ;}
+
+void Disciplina::set_pAnt(Disciplina* pd) { pAnt = pd; }
+Disciplina* Disciplina::get_pAnt() { return pAnt; }

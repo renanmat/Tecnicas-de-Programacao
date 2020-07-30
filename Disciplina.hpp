@@ -10,6 +10,7 @@ class Disciplina
         char area_conhecimento[150];
         Departamento* pDepartAssociado;
         Disciplina* pProx; 
+        Disciplina* pAnt;
 
     public:
         Disciplina(const char* ac = "");
@@ -28,7 +29,10 @@ class Disciplina
         void set_departAssociado(Departamento* pd);
         Departamento* get_departAssociado();
 
-        //get e set pata ponteiro pProx da lista encadeada
+        //get e set pata ponteiros da Disciplina anterior e proxima de lista encadeada
         void set_pProx(Disciplina* pd);
         Disciplina* get_pProx();
+
+        void set_pAnt(Disciplina* pd);
+        Disciplina* get_pAnt();
 };

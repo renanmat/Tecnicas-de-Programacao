@@ -91,7 +91,7 @@ void Principal::inicializa_disciplina()
     //set nomes
     Computacao1_2006.set_nome("Computacao 1 2006");
     Computacao2_2007.set_nome("Computacao 2 2007");
-    Introd_alg_2007.set_nome("Introducao a algoritimos 2007");
+    Introd_alg_2007.set_nome("Introducao a algoritmos 2007");
     Metodos2_2007.set_nome("Metodos II");
 
     // agrega (agregaçao fraca) as disciplinas ao departamento
@@ -138,6 +138,7 @@ void Principal::infor_DepartsUniver()
     UTFPR.print_depart();
 }
 
+//Lista as diciplinas do departamento
 void Principal::liste_Discp_de_Depart()
 {
     DAELN.liste_disciplinas();

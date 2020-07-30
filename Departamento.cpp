@@ -69,6 +69,7 @@ void Departamento::inclui_disciplina(Disciplina* pd)
         else
         {
             pDiscAtual->set_pProx(pd);
+            pd->set_pAnt(pDiscAtual);
             pDiscAtual = pd;
         }
         
@@ -78,12 +79,28 @@ void Departamento::inclui_disciplina(Disciplina* pd)
 void Departamento::liste_disciplinas()
 {
     Disciplina* pAux = pDiscPrim;
+
+    cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
     
     while(pAux != nullptr)
     {
-        cout<<"Disciplina "<<pAux->get_nome()<<" pertence ao Departamento "<< nome << endl;
+        cout<<" - "<<pAux->get_nome()<< endl;
 
         pAux = pAux->get_pProx();
     }
 
+}
+
+void Departamento::liste_disciplinas2()
+{
+    Disciplina* pAux = pDiscAtual;
+
+    cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
+
+    while(pAux)
+    {
+        cout<<" - "<<pAux->get_nome()<< endl;
+
+        pAux = pAux->get_pAnt();
+    }
 }

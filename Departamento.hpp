@@ -35,6 +35,7 @@ class Departamento
         //atraves de lista escadeada
         void inclui_disciplina(Disciplina* pd);
         void liste_disciplinas();
+        void liste_disciplinas2();
 };
 
 #endif

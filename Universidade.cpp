@@ -52,9 +52,11 @@ void Universidade::print_depart()
     //print usando <list>
     list<Departamento*>::iterator iterador;
 
+    cout<<"Universidade "<<nome<<" departamento(s):"<<endl;
+
     for(iterador = lpDepart.begin(); iterador != lpDepart.end(); iterador++)
     {
-        cout<<nome<<" departamento "<<(*iterador)->getNome()<<endl;
+        cout<<" - "<<(*iterador)->getNome()<<endl;
     }
 
 }
