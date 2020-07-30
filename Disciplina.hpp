@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Departamento.hpp"
+#include "Aluno.hpp"
 
 class Disciplina
 {
@@ -11,6 +12,11 @@ class Disciplina
         Departamento* pDepartAssociado;
         Disciplina* pProx; 
         Disciplina* pAnt;
+
+        //Ponteiros da lista encadiada de alunos
+        Aluno* pAlunoPrim;
+        Aluno* pAlunoAtual;
+        int cont_alunos;
 
     public:
         Disciplina(const char* ac = "");
@@ -35,4 +41,10 @@ class Disciplina
 
         void set_pAnt(Disciplina* pd);
         Disciplina* get_pAnt();
+
+        //Metodos da lista encadiada de Alunos
+        void inclui_aluno(Aluno* pa);
+        void exclui_aluno(Aluno* pa);
+        void liste_alunos();
+        void liste_alunos2();
 };

@@ -9,6 +9,7 @@ Principal::Principal():
     //Aluno
     Renan(2189, 9, 5, 1995, "Renan M"),
     Matheus(1234,9,8,2000,"Matheus"),
+    Daniel(1985, 8, 8, 1988, "Daniel"),
 
     //Universidade
     Princeton("Princeton"),
@@ -68,6 +69,7 @@ void Principal::inicializa_professor()
     Newton.setDepartamento(&Matematica);
 }
 
+
 void Principal::inicializa_universidade()
 {
     //agrega departamento a uma ao obj Universidade
@@ -99,6 +101,15 @@ void Principal::inicializa_disciplina()
     Computacao2_2007.set_departAssociado(&DAELN);
     Introd_alg_2007.set_departAssociado(&DAELN);
     Metodos2_2007.set_departAssociado(&DAELN);
+
+    //Associa alunos a uma disciplina
+    Computacao1_2006.inclui_aluno(&Renan);
+    Computacao1_2006.inclui_aluno(&Matheus);
+    Computacao1_2006.inclui_aluno(&Daniel);
+}
+
+void Principal::inicializa_aluno()
+{
 }
 
 //# # # # # # Executar # # # # # #
@@ -145,6 +156,13 @@ void Principal::liste_Discp_de_Depart()
     cout<<endl;
 }
 
+void Principal::liste_alunos_de_disciplina()
+{
+    Computacao1_2006.liste_alunos();
+    cout<<endl;
+    
+}
+
 void Principal::executar()
  {
     infor_idadeProf(); 
@@ -163,4 +181,7 @@ void Principal::executar()
     cout<<endl;
 
     liste_Discp_de_Depart();
+    cout<<endl;
+
+    liste_alunos_de_disciplina();
  }

@@ -14,7 +14,7 @@ class Principal
         Professor Einstein;
 
         // Alunos
-        Aluno Renan, Matheus;
+        Aluno Renan, Matheus, Daniel;
 
         //Universidade
         Universidade Princeton;
@@ -45,6 +45,7 @@ class Principal
         void inicializa_universidade();
         void inicializa_departamento();
         void inicializa_disciplina();
+        void inicializa_aluno();
 
         void infor_idadeProf();
         void infor_idadeAluno();
@@ -52,6 +53,7 @@ class Principal
         void infor_DepartProf();
         void infor_DepartsUniver();
         void liste_Discp_de_Depart();
+        void liste_alunos_de_disciplina();
 
         void executar(); 
 };

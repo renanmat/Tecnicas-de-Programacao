@@ -24,6 +24,9 @@ void Pessoa::inicializa(int diaNas, int mesNas, int anoNas, const char *nomep)
     idade = -1;
 }
 
+void Pessoa::set_nome(const char* n) { strcpy(nome, n); }
+char* Pessoa::get_nome() { return nome; }
+
 void Pessoa::calc_idade(int diaAt, int mesAt, int ano_atual){
     idade = ano_atual - ano;
     if(mes > mesAt)
