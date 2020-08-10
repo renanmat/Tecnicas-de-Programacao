@@ -1,7 +1,10 @@
 #pragma once
 
-#include "Departamento.hpp"
-#include "Aluno.hpp"
+#include "ElAluno.hpp"
+
+class Departamento;
+
+
 
 class Disciplina
 {
@@ -10,12 +13,10 @@ class Disciplina
         char nome[150];
         char area_conhecimento[150];
         Departamento* pDepartAssociado;
-        Disciplina* pProx; 
-        Disciplina* pAnt;
 
         //Ponteiros da lista encadiada de alunos
-        Aluno* pAlunoPrim;
-        Aluno* pAlunoAtual;
+        ElAluno* pElAlunoPrim;
+        ElAluno* pElAlunoAtual;
         int cont_alunos;
 
     public:
@@ -35,16 +36,8 @@ class Disciplina
         void set_departAssociado(Departamento* pd);
         Departamento* get_departAssociado();
 
-        //get e set pata ponteiros da Disciplina anterior e proxima de lista encadeada
-        void set_pProx(Disciplina* pd);
-        Disciplina* get_pProx();
-
-        void set_pAnt(Disciplina* pd);
-        Disciplina* get_pAnt();
-
         //Metodos da lista encadiada de Alunos
         void inclui_aluno(Aluno* pa);
-        void exclui_aluno(Aluno* pa);
         void liste_alunos();
         void liste_alunos2();
 };

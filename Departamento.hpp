@@ -2,8 +2,10 @@
 #define _DEPARTAMENTO_HPP_
 #include <string.h>
 
+
 class Universidade;
 class Disciplina;
+class ElDisciplina;
 
 class Departamento
 {
@@ -13,8 +15,8 @@ class Departamento
         Universidade* pUniversidade;
         
         //ponteiros para lista encadeada de disciplinas
-        Disciplina* pDiscPrim;
-        Disciplina* pDiscAtual;
+        ElDisciplina* pElDiscPrim;
+        ElDisciplina* pElDiscAtual;
     
     public:
         Departamento(const char* pNome = "", int i = 0);
@@ -34,7 +36,9 @@ class Departamento
         //agrega as disciplinas ao departamento
         //atraves de lista escadeada
         void inclui_disciplina(Disciplina* pd);
+        //Os elementos sao listados do primeiro ate o ultimo
         void liste_disciplinas();
+        //Os elementos sao listados do ultimo ate o primeiro
         void liste_disciplinas2();
 };
 

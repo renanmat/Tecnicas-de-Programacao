@@ -10,6 +10,7 @@ Principal::Principal():
     Renan(2189, 9, 5, 1995, "Renan M"),
     Matheus(1234,9,8,2000,"Matheus"),
     Daniel(1985, 8, 8, 1988, "Daniel"),
+    Ana(698745, 20, 1 , 200, "Ana" ),
 
     //Universidade
     Princeton("Princeton"),
@@ -106,6 +107,10 @@ void Principal::inicializa_disciplina()
     Computacao1_2006.inclui_aluno(&Renan);
     Computacao1_2006.inclui_aluno(&Matheus);
     Computacao1_2006.inclui_aluno(&Daniel);
+
+    Metodos2_2007.inclui_aluno(&Renan);
+    Metodos2_2007.inclui_aluno(&Ana);
+    Metodos2_2007.inclui_aluno(&Daniel);
 }
 
 void Principal::inicializa_aluno()
@@ -154,11 +159,17 @@ void Principal::liste_Discp_de_Depart()
 {
     DAELN.liste_disciplinas();
     cout<<endl;
+
+    DAELN.liste_disciplinas2();
+    cout<<endl;
 }
 
 void Principal::liste_alunos_de_disciplina()
 {
     Computacao1_2006.liste_alunos();
+    cout<<endl;
+
+    Metodos2_2007.liste_alunos2();
     cout<<endl;
     
 }

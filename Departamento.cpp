@@ -1,5 +1,6 @@
 #include "Departamento.hpp"
-#include "Disciplina.hpp"
+#include "ElDisciplina.hpp"
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -10,8 +11,8 @@ using std::endl;
     strcpy(nome,pNome);
     pUniversidade = nullptr;
 
-    pDiscPrim = nullptr;
-    pDiscAtual = nullptr;
+    pElDiscPrim = nullptr;
+    pElDiscAtual = nullptr;
 
  }
 
@@ -19,15 +20,25 @@ Departamento::Departamento()
 {
     id = 0;
     pUniversidade = nullptr;
-    pDiscPrim = nullptr;
-    pDiscAtual = nullptr;
+    pElDiscPrim = nullptr;
+    pElDiscAtual = nullptr;
 }
 
 Departamento::~Departamento()
 {
     pUniversidade = nullptr;
-    pDiscPrim = nullptr;
-    pDiscAtual = nullptr;
+
+    //Desaloca todos os elementos da lista(exclui a lista)
+    ElDisciplina* pAux = pElDiscPrim;
+
+    while(pElDiscPrim != nullptr)
+    {
+        pElDiscPrim = pAux->get_proxElDisc();
+        delete pAux;
+        pAux = pElDiscPrim;
+    }
+
+    pElDiscAtual = nullptr;
 }
 
 void Departamento::setId(int i)
@@ -60,47 +71,64 @@ void Departamento::setUniversidade(Universidade* pUni)
 void Departamento::inclui_disciplina(Disciplina* pd)
 {
     if(pd != nullptr)
-    {
-        if(pDiscPrim == nullptr)
+    {   
+        //Cria um ponteiro e aloca dinamicamente um elemento Disciplina
+        ElDisciplina* pAux = nullptr;
+        pAux = new ElDisciplina();
+        //agrega fracamente a Disciplina ao elemento disciplina
+        pAux->set_disciplina(pd);
+
+        //inclui elementos da diciplina na lista de disciplinas que esta agregada fracamente ao departamento
+        //verifica se a lista esta vazia
+        if(pElDiscPrim == nullptr)
         {
-            pDiscPrim = pd;
-            pDiscAtual = pd;
+            //inclui o primeiro elemento da lista
+            pElDiscPrim = pAux;
+            pElDiscAtual = pAux;
         }
         else
+        //se a lista nao estiver vazia
         {
-            pDiscAtual->set_pProx(pd);
-            pd->set_pAnt(pDiscAtual);
-            pDiscAtual = pd;
+            //inclui o elemento no final da lista
+            pElDiscAtual->set_proxElDisc(pAux);
+            pAux->set_antElDisc(pElDiscAtual);
+            pElDiscAtual = pAux;
         }
         
     }
 }
 
+
 void Departamento::liste_disciplinas()
 {
-    Disciplina* pAux = pDiscPrim;
+    ElDisciplina* pAux = pElDiscPrim;
 
     cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
     
     while(pAux != nullptr)
     {
-        cout<<" - "<<pAux->get_nome()<< endl;
+        Disciplina* pDisc = pAux->get_disciplina();
 
-        pAux = pAux->get_pProx();
+        cout<<" - "<<pDisc->get_nome()<< endl;
+
+        pAux = pAux->get_proxElDisc();
     }
 
 }
 
+
 void Departamento::liste_disciplinas2()
 {
-    Disciplina* pAux = pDiscAtual;
+    ElDisciplina* pAux = pElDiscAtual;
 
     cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
 
     while(pAux)
     {
-        cout<<" - "<<pAux->get_nome()<< endl;
+        Disciplina* pDisc = pAux->get_disciplina();
 
-        pAux = pAux->get_pAnt();
+        cout<<" - "<<pDisc->get_nome()<< endl;
+
+        pAux = pAux->get_antElDisc();
     }
 }

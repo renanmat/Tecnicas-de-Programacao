@@ -14,7 +14,7 @@ class Principal
         Professor Einstein;
 
         // Alunos
-        Aluno Renan, Matheus, Daniel;
+        Aluno Renan, Matheus, Daniel, Ana;
 
         //Universidade
         Universidade Princeton;

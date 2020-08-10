@@ -1,6 +1,10 @@
 #include "Disciplina.hpp"
+#include "Departamento.hpp"
 
 #include "string.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 Disciplina::Disciplina(const char* ac)
 {
@@ -8,12 +12,10 @@ Disciplina::Disciplina(const char* ac)
     id = 0;
     strcpy(nome, "");
     pDepartAssociado = nullptr;
-    pProx = nullptr;
-    pAnt = nullptr; 
 
     //ponteiro lista encadeada de alunos
-    pAlunoPrim = nullptr;
-    pAlunoAtual = nullptr;
+    pElAlunoPrim = nullptr;
+    pElAlunoAtual = nullptr;
 
     cont_alunos = 0;
 
@@ -21,13 +23,20 @@ Disciplina::Disciplina(const char* ac)
 
 Disciplina::~Disciplina()
 {
-    pDepartAssociado = nullptr;
-    pProx = nullptr;
-    pAnt = nullptr;
 
-    //ponteiro lista encadeada de alunos
-    pAlunoPrim = nullptr;
-    pAlunoAtual = nullptr;
+    //deleta elementos da lista encadiada
+    ElAluno* pAux = pElAlunoPrim;
+    while(pElAlunoPrim)
+    {
+        pElAlunoPrim = pAux->get_prox();
+        delete pAux;
+        pAux = pElAlunoPrim;
+    }
+
+    //Aterra ponteiros
+    pElAlunoAtual = nullptr;
+    pDepartAssociado = nullptr;
+
     cont_alunos = 0;
 }
 
@@ -57,28 +66,30 @@ void Disciplina::set_departAssociado(Departamento* pd)
 }
 Departamento* Disciplina::get_departAssociado(){ return pDepartAssociado; }
 
-//get e set pata ponteiros da Disciplina anterior e proxima de lista encadeada
-void Disciplina::set_pProx(Disciplina* pd){ pProx = pd; }
-Disciplina* Disciplina::get_pProx(){ return pProx ;}
-
-void Disciplina::set_pAnt(Disciplina* pd) { pAnt = pd; }
-Disciplina* Disciplina::get_pAnt() { return pAnt; }
 
 //Metodos da lista encadiada de Alunos
 void Disciplina::inclui_aluno(Aluno* pa)
 {
+    //verifica se o ponteiro pa de aluno é nulo e verifica se qunatidade de alunos ainda é menor que 45  
     if(pa != nullptr && cont_alunos < 45)
     {
-        if(pAlunoPrim == nullptr)
+        //Cria ponteiro tipo ElAluno
+        ElAluno* pAux;
+        //Aloca dinamicamente com o operador NEW
+        pAux = new ElAluno();
+        //seta o aluno em elemento aluno.
+        pAux->set_aluno(pa);
+
+        if(pElAlunoPrim == nullptr)
         {
-            pAlunoPrim = pa;
-            pAlunoAtual = pa;
+            pElAlunoPrim = pAux;
+            pElAlunoAtual = pAux;
         }
         else
         {
-            pAlunoAtual->set_pProx(pa);
-            pa->set_pAnt(pAlunoAtual);
-            pAlunoAtual = pa;
+            pElAlunoAtual->set_prox(pAux);
+            pAux->set_ant(pElAlunoAtual);
+            pElAlunoAtual = pAux;
         } 
            
         cont_alunos++;
@@ -90,57 +101,40 @@ void Disciplina::inclui_aluno(Aluno* pa)
     
 }
 
-//Exclui aluno apenas da lista, nao exclui obj aluno.
-void Disciplina::exclui_aluno(Aluno* pa)
-{
-    if(pa == pAlunoPrim)
-    {
-        pAlunoPrim = pa->get_pProx();
-        pAlunoPrim->set_pAnt(nullptr);
-        pa->set_pProx(nullptr);
-
-    } 
-    else if(pa == pAlunoAtual)
-            {
-                pAlunoAtual = pa->get_pAnt();
-                pAlunoAtual->set_pProx(nullptr);
-                pa->set_pAnt(nullptr);
-            } 
-            else
-            {
-                Aluno* pAux= pa->get_pAnt();
-                pAux->set_pProx(pa->get_pProx());
-
-                pAux = pa->get_pProx();
-                pAux->set_pAnt(pa->get_pAnt());
-
-                pa->set_pProx(nullptr);
-                pa->set_pAnt(nullptr);
-            }
-}
 
 void Disciplina::liste_alunos()
 {
-    Aluno* pAux = pAlunoPrim;
+    //pAux recebe o primeiro elemento da lista
+    ElAluno* pAux = pElAlunoPrim;
 
     cout<<"Disciplina "<<nome<<" lista de Alunos:"<<endl;
+
+    //verifica se nao é nulo
     while(pAux)
     {
-        cout<<" - "<<pAux->get_nome()<<endl;
-
-        pAux = pAux->get_pProx();
+        // pAluno recebe o ponteiro para aluno
+        Aluno* pAluno = pAux->get_aluno();
+        //mostra nome do aluno
+        cout<<" - "<<pAluno->get_nome()<<endl;
+        //pAux recebe o proximo elemento da lista
+        pAux = pAux->get_prox();
     }
 }
 
 void Disciplina::liste_alunos2()
 {
-    Aluno* pAux = pAlunoAtual;
+    //pAux recebe o ultimo elemento da lista
+     ElAluno* pAux = pElAlunoAtual;
 
     cout<<"Disciplina "<<nome<<" lista de Alunos:"<<endl;
+    //verifica se nao é nulo
     while(pAux)
     {
-        cout<<" - "<<pAux->get_nome()<<endl;
-
-        pAux = pAux->get_pAnt();
+        // pAluno recebe o ponteiro para aluno
+        Aluno* pAluno = pAux->get_aluno();
+        //mostra nome do aluno
+        cout<<" - "<<pAluno->get_nome()<<endl;
+        //pAux recebe o elemento anterior da lista
+        pAux = pAux->get_ant();
     }
 }
