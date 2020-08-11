@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Aluno.hpp"
+#include "Nota.hpp"
 
 class ElAluno
 {
@@ -8,6 +9,7 @@ class ElAluno
         Aluno* pAluno;
         ElAluno* pProx;
         ElAluno* pAnt;
+        Nota* pNota;
     
     public:
         ElAluno();
@@ -20,5 +22,7 @@ class ElAluno
         Aluno* get_aluno();
         ElAluno* get_prox();
         ElAluno* get_ant();
+
+        Nota* get_notas();
         
 };

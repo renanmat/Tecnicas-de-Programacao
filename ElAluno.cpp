@@ -5,12 +5,17 @@ ElAluno::ElAluno()
     pAluno = nullptr;
     pAnt = nullptr;
     pProx = nullptr;
+
+    pNota = nullptr;
+    pNota = new Nota();
 }
 ElAluno::~ElAluno()
 {
     pAluno = nullptr;
     pAnt = nullptr;
     pProx = nullptr;
+
+    delete pNota;
 }
 
 void ElAluno::set_aluno(Aluno* pa)
@@ -37,4 +42,9 @@ ElAluno* ElAluno::get_prox()
 ElAluno* ElAluno::get_ant()
 { 
     return pAnt; 
+}
+
+Nota* ElAluno::get_notas()
+{
+    return pNota;
 }

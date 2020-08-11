@@ -111,6 +111,10 @@ void Principal::inicializa_disciplina()
     Metodos2_2007.inclui_aluno(&Renan);
     Metodos2_2007.inclui_aluno(&Ana);
     Metodos2_2007.inclui_aluno(&Daniel);
+
+    //inserir notas e faltas de alunos
+    Metodos2_2007.set_notas(2189, 7.5, 8.0, 0, 7 );
+    Metodos2_2007.set_notas(1985, 9.45, 3.0, 10.0, 15);
 }
 
 void Principal::inicializa_aluno()
@@ -174,25 +178,36 @@ void Principal::liste_alunos_de_disciplina()
     
 }
 
+void Principal::informe_notasAlunos()
+{
+    Metodos2_2007.info_aluno(1985);
+    cout<<endl;
+    Metodos2_2007.info_aluno(2189);
+    cout<<endl;
+}
+
 void Principal::executar()
  {
-    infor_idadeProf(); 
-    cout<<endl;
+    // infor_idadeProf(); 
+    // cout<<endl;
 
-    infor_ondeProfTrab();
-    cout<<endl;
+    // infor_ondeProfTrab();
+    // cout<<endl;
 
-    infor_DepartProf();
-    cout<<endl;
+    // infor_DepartProf();
+    // cout<<endl;
 
-    infor_idadeAluno();
-    cout<<endl;
+    // infor_idadeAluno();
+    // cout<<endl;
 
-    infor_DepartsUniver();
-    cout<<endl;
+    // infor_DepartsUniver();
+    // cout<<endl;
 
-    liste_Discp_de_Depart();
-    cout<<endl;
+    // liste_Discp_de_Depart();
+    // cout<<endl;
 
-    liste_alunos_de_disciplina();
+    // liste_alunos_de_disciplina();
+    // cout<<endl;
+    
+    informe_notasAlunos();
  }

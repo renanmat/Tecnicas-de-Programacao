@@ -54,6 +54,7 @@ class Principal
         void infor_DepartsUniver();
         void liste_Discp_de_Depart();
         void liste_alunos_de_disciplina();
+        void informe_notasAlunos();
 
         void executar(); 
 };

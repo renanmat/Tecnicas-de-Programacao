@@ -138,3 +138,53 @@ void Disciplina::liste_alunos2()
         pAux = pAux->get_ant();
     }
 }
+
+ElAluno* Disciplina::get_alunoList(int ra)
+{
+    ElAluno* pAux = pElAlunoPrim;
+    while(pAux)
+    {
+        Aluno* pAluno = pAux->get_aluno();
+
+        if(pAluno->get_ra() == ra)
+        {
+            return pAux;
+        }
+
+        pAux = pAux->get_prox();
+    }
+    return nullptr;
+}
+
+void Disciplina::set_notas(int ra, double n1, double n2, double f, int nFalt)
+{
+    ElAluno* pAux = get_alunoList(ra);
+    Nota* pNota = pAux->get_notas();
+
+    pNota->set_primParcial(n1);
+    pNota->set_secParcial(n2);
+    pNota->set_final(f);
+    pNota->set_nFaltas(nFalt);
+}
+
+void Disciplina::info_aluno(int ra)
+{
+    ElAluno* pAux = get_alunoList(ra);
+
+    if(pAux != nullptr)
+    {
+        Aluno* pAluno = pAux->get_aluno();
+        Nota* pNotas = pAux->get_notas();
+
+        cout<<"Diciplina: "<< nome<<endl;
+        cout<<"RA: "<<pAluno->get_ra()<<" Nome: "<<pAluno->get_nome()<<endl;
+        cout<<"Notas: "<<"\n- Primeira parcial: "<< pNotas->get_primParcial()<<endl;
+        cout<<"- Segunda parcial: "<<pNotas->get_secParcial()<<"\n- Final: "<<pNotas->get_final()<<endl;
+        cout<<"- Numero de faltas: "<<pNotas->get_nFaltas()<<endl;
+    }
+    else
+    {
+        cout<<"Aluno nao encontrado!!"<<endl;
+    }
+    
+}
