@@ -153,7 +153,7 @@ void ListaAlunos::info_aluno(int ra)
     }
     else
     {
-        cout<<"Aluno nao encontrado!!"<<endl;
+        cout<<"Aluno nao encontrado!!!"<<endl;
     }
     
 }
