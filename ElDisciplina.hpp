@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Disciplina.hpp"
+class Disciplina;
 
 class ElDisciplina
 {

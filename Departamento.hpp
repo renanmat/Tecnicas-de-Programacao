@@ -2,10 +2,9 @@
 #define _DEPARTAMENTO_HPP_
 #include <string.h>
 
-
+#include "ListaDisciplinas.hpp"
 class Universidade;
 class Disciplina;
-class ElDisciplina;
 
 class Departamento
 {
@@ -13,10 +12,7 @@ class Departamento
         int id;
         char nome[100];
         Universidade* pUniversidade;
-        
-        //ponteiros para lista encadeada de disciplinas
-        ElDisciplina* pElDiscPrim;
-        ElDisciplina* pElDiscAtual;
+        ListaDisciplinas objLDisciplinas;
     
     public:
         Departamento(const char* pNome = "", int i = 0);
@@ -30,7 +26,7 @@ class Departamento
         void setNome(const char* pNome);
         char* getNome();
 
-        //reverencia a universidade que esta afiliada
+        //referencia a universidade que esta afiliada
         void setUniversidade(Universidade* pUni);
 
         //agrega as disciplinas ao departamento

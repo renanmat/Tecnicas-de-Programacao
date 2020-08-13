@@ -200,8 +200,8 @@ void Principal::executar()
     // infor_idadeAluno();
     // cout<<endl;
 
-    // infor_DepartsUniver();
-    // cout<<endl;
+    infor_DepartsUniver();
+    cout<<endl;
 
     // liste_Discp_de_Depart();
     // cout<<endl;
@@ -209,5 +209,5 @@ void Principal::executar()
     // liste_alunos_de_disciplina();
     // cout<<endl;
     
-    informe_notasAlunos();
+    // informe_notasAlunos();
  }
