@@ -1,36 +1,32 @@
 #ifndef _UNIVERSIDADE_HPP_
 #define _UNIVERSIDADE_HPP_
 
-#include "Departamento.hpp"
+#include "ListaDepartamentos.hpp"
+
 #include <string.h>
 #include <iostream>
 using std::cout;
 using std::endl;
 
-//#include <vector> 
-#include <list>
-using namespace std;
+
 
 
 class Universidade
 {
     private:
         char nome[100];
-
-        //agregando(agregacao fraca) um obj Departamento na classe pessoa
-        //vector <Departamento*> lpDepart;
-        list <Departamento*> lpDepart;
+        ListaDepartamentos objListDepart;
 
     public:
-        Universidade(const char *nome_uni = "");
-        Universidade();
+        Universidade(int nd = 150, const char *nome_uni = "");
         ~Universidade();
         void setNome(const char *nome_uni);
         char *getNome();
 
         //metodo para agregar departamento
-        void setDepart(Departamento *pDepart);
-        void print_depart();
+        void inclui_depart(Departamento *pDepart);
+        void liste_departamentos();
+        void liste_departamentos2();
 
     
 };

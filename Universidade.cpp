@@ -1,14 +1,10 @@
  #include "Universidade.hpp"
  
  
- Universidade::Universidade(const char *nome_uni)
+ Universidade::Universidade(int nd, const char *nome_uni):
+ objListDepart(-1, nome_uni)
  {
      strcpy(nome, nome_uni);
- }
-
- Universidade::Universidade()
- {
-
  }
 
 Universidade::~Universidade()
@@ -18,6 +14,7 @@ Universidade::~Universidade()
 void Universidade::setNome(const char *nome_uni)
 {
     strcpy(nome,nome_uni);
+    objListDepart.set_nome(nome_uni);
 }
 
 char* Universidade::getNome()
@@ -26,37 +23,17 @@ char* Universidade::getNome()
 }
 
 
-void Universidade::setDepart(Departamento* pDepart)
+void Universidade::inclui_depart(Departamento* pDepart)
 {
-    if(pDepart != NULL)
-    {
-       lpDepart.push_back(pDepart);
-    }else
-    {
-        cout<<"Departamento nao adicionado a universidade, ";
-        cout<<"pois departamento é invalido(ponteiro para departamento é nulo)"<<endl;
-    }
-    
-    
+    objListDepart.inclui_depart(pDepart);
 }
         
-void Universidade::print_depart()
+void Universidade::liste_departamentos()
 {
-    //print usando <vector>
-    /*int tam = (int)lpDepart.size();
-    for(int i = 0; i < tam; i++)
-    {
-        cout<<nome<<" departamento "<<lpDepart[i]->getNome()<<endl;
-    }*/
+    objListDepart.liste_depart();
+}
 
-    //print usando <list>
-    list<Departamento*>::iterator iterador;
-
-    cout<<"Universidade "<<nome<<" departamento(s):"<<endl;
-
-    for(iterador = lpDepart.begin(); iterador != lpDepart.end(); iterador++)
-    {
-        cout<<" - "<<(*iterador)->getNome()<<endl;
-    }
-
+void Universidade::liste_departamentos2()
+{
+    objListDepart.liste_depart2();
 }

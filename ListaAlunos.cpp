@@ -95,7 +95,7 @@ void ListaAlunos::liste_alunos2()
     //pAux recebe o ultimo elemento da lista
      ElAluno* pAux = pElAlunoAtual;
 
-    cout<<"Disciplina "<<nome<<" lista de Alunos:"<<endl;
+    cout<<"Disciplina "<<nome<<" lista 2 de Alunos:"<<endl;
     //verifica se nao é nulo
     while(pAux)
     {

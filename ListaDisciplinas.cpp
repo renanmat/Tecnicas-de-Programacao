@@ -96,7 +96,7 @@ void ListaDisciplinas::liste_disciplinas2()
 {
     ElDisciplina* pAux = pElDiscAtual;
 
-    cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
+    cout<<"Departamento "<<nome<<" lista 2 de disciplinas:"<<endl;
 
     while(pAux)
     {

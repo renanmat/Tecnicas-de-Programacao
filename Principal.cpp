@@ -13,9 +13,9 @@ Principal::Principal():
     Ana(698745, 20, 1 , 200, "Ana" ),
 
     //Universidade
-    Princeton("Princeton"),
-    Cambridge("Cambridge"),
-    UTFPR("UTFPR"),
+    Princeton(-1,"Princeton"),
+    Cambridge(-1,"Cambridge"),
+    UTFPR(-1,"UTFPR"),
 
     //Departamento
     Fisica("Fisica"),
@@ -74,10 +74,10 @@ void Principal::inicializa_professor()
 void Principal::inicializa_universidade()
 {
     //agrega departamento a uma ao obj Universidade
-    Princeton.setDepart(&Fisica);
-    Princeton.setDepart(&Astronomia);
-    Cambridge.setDepart(&Matematica);
-    UTFPR.setDepart(&DAELN);
+    Princeton.inclui_depart(&Fisica);
+    Princeton.inclui_depart(&Astronomia);
+    Cambridge.inclui_depart(&Matematica);
+    UTFPR.inclui_depart(&DAELN);
 }
 
 void Principal::inicializa_departamento()
@@ -149,13 +149,13 @@ void Principal::infor_DepartProf()
 
 void Principal::infor_DepartsUniver()
 {
-    Princeton.print_depart();
+    Princeton.liste_departamentos();
     cout<<endl;
     
-    Cambridge.print_depart();
+    Cambridge.liste_departamentos2();
     cout<<endl;
 
-    UTFPR.print_depart();
+    UTFPR.liste_departamentos();
 }
 
 //Lista as diciplinas do departamento
@@ -203,11 +203,11 @@ void Principal::executar()
     infor_DepartsUniver();
     cout<<endl;
 
-    // liste_Discp_de_Depart();
-    // cout<<endl;
+    liste_Discp_de_Depart();
+    cout<<endl;
 
-    // liste_alunos_de_disciplina();
-    // cout<<endl;
+    liste_alunos_de_disciplina();
+    cout<<endl;
     
     // informe_notasAlunos();
  }
