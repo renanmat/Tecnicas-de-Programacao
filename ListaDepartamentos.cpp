@@ -35,7 +35,7 @@ void ListaDepartamentos::set_nome(const char* n)
 
 void ListaDepartamentos::inclui_depart(Departamento* pd)
 {
-    if(pd != nullptr && cont < numero_depart || pd != nullptr && numero_depart == -1)
+    if( (pd != nullptr && cont < numero_depart) || (pd != nullptr && numero_depart == -1) ) 
     {
         ElDepartamento* pAux = new ElDepartamento();
         pAux->set_depart(pd);

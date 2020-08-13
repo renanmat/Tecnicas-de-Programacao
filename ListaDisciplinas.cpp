@@ -32,7 +32,10 @@ ListaDisciplinas::~ListaDisciplinas()
 
 void ListaDisciplinas::inclui_disciplina(Disciplina* pd)
 {
-    if(pd != nullptr && cont < numero_disciplinas || pd != nullptr && numero_disciplinas == -1)
+    //verifica se o ponteiro  é valido e se nao atingiu o numero maximo de elementos na lista
+    //"numero_disciplina === -1" server quando nao se quer especificar o numero maximo de disciplinas
+    //-1 permite inserir um numero  infinito de disciplinas
+    if( (pd != nullptr && cont < numero_disciplinas) || (pd != nullptr && numero_disciplinas == -1))
     {   
         //Cria um ponteiro e aloca dinamicamente um elemento Disciplina
         ElDisciplina* pAux = nullptr;
