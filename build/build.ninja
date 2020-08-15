@@ -40,6 +40,18 @@ build exe@exe/main.cpp.o: cpp_COMPILER ../main.cpp
  DEPFILE = exe@exe/main.cpp.o.d
  ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
 
+build exe@exe/Menu.cpp.o: cpp_COMPILER ../Menu.cpp
+ DEPFILE = exe@exe/Menu.cpp.o.d
+ ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
+
+build exe@exe/ListaUniversidades.cpp.o: cpp_COMPILER ../ListaUniversidades.cpp
+ DEPFILE = exe@exe/ListaUniversidades.cpp.o.d
+ ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
+
+build exe@exe/ElUniversidade.cpp.o: cpp_COMPILER ../ElUniversidade.cpp
+ DEPFILE = exe@exe/ElUniversidade.cpp.o.d
+ ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
+
 build exe@exe/Aluno.cpp.o: cpp_COMPILER ../Aluno.cpp
  DEPFILE = exe@exe/Aluno.cpp.o.d
  ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
@@ -96,7 +108,7 @@ build exe@exe/Universidade.cpp.o: cpp_COMPILER ../Universidade.cpp
  DEPFILE = exe@exe/Universidade.cpp.o.d
  ARGS = -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g
 
-build exe: cpp_LINKER exe@exe/main.cpp.o exe@exe/Aluno.cpp.o exe@exe/Departamento.cpp.o exe@exe/Disciplina.cpp.o exe@exe/ElAluno.cpp.o exe@exe/ElDepartamento.cpp.o exe@exe/ElDisciplina.cpp.o exe@exe/ListaAlunos.cpp.o exe@exe/ListaDepartamentos.cpp.o exe@exe/ListaDisciplinas.cpp.o exe@exe/Nota.cpp.o exe@exe/Pessoa.cpp.o exe@exe/Principal.cpp.o exe@exe/Professor.cpp.o exe@exe/Universidade.cpp.o
+build exe: cpp_LINKER exe@exe/main.cpp.o exe@exe/Menu.cpp.o exe@exe/ListaUniversidades.cpp.o exe@exe/ElUniversidade.cpp.o exe@exe/Aluno.cpp.o exe@exe/Departamento.cpp.o exe@exe/Disciplina.cpp.o exe@exe/ElAluno.cpp.o exe@exe/ElDepartamento.cpp.o exe@exe/ElDisciplina.cpp.o exe@exe/ListaAlunos.cpp.o exe@exe/ListaDepartamentos.cpp.o exe@exe/ListaDisciplinas.cpp.o exe@exe/Nota.cpp.o exe@exe/Pessoa.cpp.o exe@exe/Principal.cpp.o exe@exe/Professor.cpp.o exe@exe/Universidade.cpp.o
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined
 
 # Test rules

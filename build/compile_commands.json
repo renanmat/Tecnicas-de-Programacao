@@ -7,6 +7,24 @@
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build",
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Menu.cpp.o' -MF 'exe@exe/Menu.cpp.o.d' -o 'exe@exe/Menu.cpp.o' -c ../Menu.cpp",
+    "file": "../Menu.cpp",
+    "output": "exe@exe/Menu.cpp.o"
+  },
+  {
+    "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build",
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaUniversidades.cpp.o' -MF 'exe@exe/ListaUniversidades.cpp.o.d' -o 'exe@exe/ListaUniversidades.cpp.o' -c ../ListaUniversidades.cpp",
+    "file": "../ListaUniversidades.cpp",
+    "output": "exe@exe/ListaUniversidades.cpp.o"
+  },
+  {
+    "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build",
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ElUniversidade.cpp.o' -MF 'exe@exe/ElUniversidade.cpp.o.d' -o 'exe@exe/ElUniversidade.cpp.o' -c ../ElUniversidade.cpp",
+    "file": "../ElUniversidade.cpp",
+    "output": "exe@exe/ElUniversidade.cpp.o"
+  },
+  {
+    "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build",
     "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Aluno.cpp.o' -MF 'exe@exe/Aluno.cpp.o.d' -o 'exe@exe/Aluno.cpp.o' -c ../Aluno.cpp",
     "file": "../Aluno.cpp",
     "output": "exe@exe/Aluno.cpp.o"

@@ -60,16 +60,17 @@ void ListaDisciplinas::inclui_disciplina(Disciplina* pd)
             pElDiscAtual = pAux;
         }
          cont++; 
+         cout<<"Disciplina cadastrada!!"<<endl;
     }
     else
     {
         if(pd != nullptr)
         {
-            cout<<"Departamento atingiu o numero maximo de Disciplinas!\nDisciplina nao adicionada"<<endl;
+            cout<<"Departamento atingiu o numero maximo de Disciplinas!\nDisciplina NAO foi cadastrada"<<endl;
         }
         else
         {
-            cout<<"Ponteiro para Disciplina é NULO!! Disciplina nao adicionada."<<endl;
+            cout<<"Ponteiro para Disciplina é NULO!! Disciplina NAO foi cadastrada."<<endl;
         }
         
     }

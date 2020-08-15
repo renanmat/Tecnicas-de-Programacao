@@ -52,23 +52,24 @@ void ListaDepartamentos::inclui_depart(Departamento* pd)
             pElDepAtual = pAux;
         }
         cont++;
+        cout<<"Departamento cadastrado!!"<<endl;
     }
     else
     {
         if (pd != nullptr)
         {
-            cout<<"Numero maximo de departamentos atingido!\nDepartamento nao adicionado!"<<endl;
+            cout<<"Numero maximo de departamentos atingido!\nDepartamento NAO foi cadastrado!"<<endl;
         }
         else
         {
-            cout<<"Ponteiro para departamento nulo!"<<endl;
+            cout<<"Ponteiro para departamento é nulo!\nDepartamento NAO foi cadastrado"<<endl;
         }     
     }  
 }
 
 void ListaDepartamentos::liste_depart()
 {
-    cout<<"Universidade "<<nome<<" lista de departamentos:"<<endl;
+    cout<<nome<<" lista de departamentos:"<<endl;
 
     ElDepartamento* pAux = pElDepPrim;
     while(pAux)
@@ -81,7 +82,7 @@ void ListaDepartamentos::liste_depart()
 
 void ListaDepartamentos::liste_depart2()
 {
-    cout<<"Universidade "<<nome<<" lista 2 de departamentos:"<<endl;
+    cout<<"Universidade "<<nome<<" - lista 2 de departamentos:"<<endl;
 
     ElDepartamento* pAux = pElDepAtual;
     while(pAux)
@@ -90,4 +91,18 @@ void ListaDepartamentos::liste_depart2()
 
         pAux = pAux->get_ant();
     }
+}
+
+Departamento* ListaDepartamentos::localiza_depart(const char* n)
+{
+    ElDepartamento* pAux = pElDepPrim;
+    while(pAux)
+    {
+        if(0 == strcmp(n, pAux->get_nomeDepart()) )
+        {
+            return pAux->get_depart();
+        }
+        pAux = pAux->get_prox();
+    }
+    return nullptr;
 }

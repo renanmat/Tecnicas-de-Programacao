@@ -20,4 +20,6 @@ class ListaDepartamentos
         void inclui_depart(Departamento* pd);
         void liste_depart();
         void liste_depart2();
+
+        Departamento* localiza_depart(const char* n);
 };

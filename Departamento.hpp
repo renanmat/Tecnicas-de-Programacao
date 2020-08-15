@@ -16,7 +16,6 @@ class Departamento
     
     public:
         Departamento(const char* pNome = "", int i = 0);
-        Departamento();
         ~Departamento();
 
         void setId(int i);
@@ -27,7 +26,7 @@ class Departamento
         char* getNome();
 
         //referencia a universidade que esta afiliada
-        void setUniversidade(Universidade* pUni);
+        void set_univerAssocida(Universidade* pUni);
 
         //agrega as disciplinas ao departamento
         //atraves de lista escadeada

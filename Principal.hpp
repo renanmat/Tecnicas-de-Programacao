@@ -4,7 +4,11 @@
 #include "Professor.hpp"
 #include "Aluno.hpp"
 #include "Disciplina.hpp"
+#include "Menu.hpp"
+
 #include <time.h> // para pegar data atual do sistema
+
+
 
 class Principal
 {
@@ -33,6 +37,8 @@ class Principal
         Disciplina Introd_alg_2007;
         Disciplina Metodos2_2007;
 
+        Menu objMenu;
+        
         //Dia, mes e ano atuais(data informada pelo sistema)
         int diaAt, mesAt, anoAt;
 
@@ -51,10 +57,11 @@ class Principal
         void infor_idadeAluno();
         void infor_ondeProfTrab();
         void infor_DepartProf();
-        void infor_DepartsUniver();
+        void liste_DepartsUniver();
         void liste_Discp_de_Depart();
         void liste_alunos_de_disciplina();
         void informe_notasAlunos();
+        void liste_univs();
 
         void executar(); 
 };

@@ -27,7 +27,10 @@ Principal::Principal():
     Computacao1_2006(),
     Computacao2_2007(),
     Introd_alg_2007(),
-    Metodos2_2007()
+    Metodos2_2007(),
+    
+    //Menu
+    objMenu()
 
 {  
     //Ponteiro que armazena data e hora
@@ -78,15 +81,25 @@ void Principal::inicializa_universidade()
     Princeton.inclui_depart(&Astronomia);
     Cambridge.inclui_depart(&Matematica);
     UTFPR.inclui_depart(&DAELN);
+
+    objMenu.cadastre_univer(&Princeton);
+    objMenu.cadastre_univer(&Cambridge);
+    objMenu.cadastre_univer(&UTFPR);
+
 }
 
 void Principal::inicializa_departamento()
 {
     //Departamento referencia a universidade que esta filiado
-    Fisica.setUniversidade(&Princeton);
-    Astronomia.setUniversidade(&Princeton);
-    Matematica.setUniversidade(&Cambridge);
-    DAELN.setUniversidade(&UTFPR);
+    Fisica.set_univerAssocida(&Princeton);
+    Astronomia.set_univerAssocida(&Princeton);
+    Matematica.set_univerAssocida(&Cambridge);
+    DAELN.set_univerAssocida(&UTFPR);
+
+    objMenu.cadastre_depart(&Fisica);
+    objMenu.cadastre_depart(&Astronomia);
+    objMenu.cadastre_depart(&Matematica);
+    objMenu.cadastre_depart(&DAELN);
 }
 
 void Principal::inicializa_disciplina()
@@ -115,6 +128,11 @@ void Principal::inicializa_disciplina()
     //inserir notas e faltas de alunos
     Metodos2_2007.set_notas(2189, 7.5, 8.0, 0, 7 );
     Metodos2_2007.set_notas(1985, 9.45, 3.0, 10.0, 15);
+
+    objMenu.cadastre_discp(&Computacao1_2006);
+    objMenu.cadastre_discp(&Computacao2_2007);
+    objMenu.cadastre_discp(&Introd_alg_2007);
+    objMenu.cadastre_discp(&Metodos2_2007);
 }
 
 void Principal::inicializa_aluno()
@@ -147,7 +165,7 @@ void Principal::infor_DepartProf()
     Einstein.infoDepartamento();
 }
 
-void Principal::infor_DepartsUniver()
+void Principal::liste_DepartsUniver()
 {
     Princeton.liste_departamentos();
     cout<<endl;
@@ -199,15 +217,8 @@ void Principal::executar()
 
     // infor_idadeAluno();
     // cout<<endl;
-
-    infor_DepartsUniver();
-    cout<<endl;
-
-    liste_Discp_de_Depart();
-    cout<<endl;
-
-    liste_alunos_de_disciplina();
-    cout<<endl;
     
     // informe_notasAlunos();
+
+    objMenu.menu_principal();
  }

@@ -1,5 +1,6 @@
 #include "Departamento.hpp"
 
+#include "Disciplina.hpp"
 
 #include <iostream>
 using std::cout;
@@ -13,12 +14,6 @@ using std::endl;
     pUniversidade = nullptr;
 
  }
-
-Departamento::Departamento()
-{
-    id = 0;
-    pUniversidade = nullptr;
-}
 
 Departamento::~Departamento()
 {
@@ -45,10 +40,13 @@ char* Departamento::getNome()
     return nome;
 }
 
-
-void Departamento::setUniversidade(Universidade* pUni)
+//agrega fracamente universidade ao departamento
+void Departamento::set_univerAssocida(Universidade* pUni)
 {
     pUniversidade = pUni;
+    
+    // inclui departamento na lista da universidade agregada
+    pUni->inclui_depart(this);
 }
 
 //agrega as disciplinas ao departamento
