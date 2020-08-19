@@ -6,6 +6,7 @@ using std::cin;
 #include <string>
 using std::string;
 using std::getline;
+#include <stdio.h>
 
  Menu::Menu():
  objLUniver(),
@@ -111,6 +112,7 @@ void Menu::cadastre_discp(Disciplina* pd)
     }
     
 }
+
 
 void Menu::menu_cad()
 {

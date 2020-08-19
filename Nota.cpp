@@ -6,6 +6,7 @@ Nota::Nota()
     secParcial = 0;
     parcFinal = 0;
     nFaltas = 0;
+    id = 0;
 }
 Nota::~Nota()
 {
@@ -51,3 +52,6 @@ int Nota::get_nFaltas()
 {
     return nFaltas;
 }
+
+void Nota::set_id(int i) { id = i; }
+int Nota::get_id() { return id; }

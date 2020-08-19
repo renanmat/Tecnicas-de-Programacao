@@ -12,6 +12,7 @@ class Pessoa{
         int dia,mes,ano;
         int idade;
         char nome[30];
+        int id;
 
     public:
         Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
@@ -21,6 +22,8 @@ class Pessoa{
 
         void set_nome(const char* n);
         char* get_nome();
+        void set_id(int i);
+        int get_id();
         
         //calcular e imprimir idade
         void calc_idade(int diaAt, int mesAt, int ano_atual);

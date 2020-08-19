@@ -5,10 +5,20 @@
  objListDepart(-1, nome_uni)
  {
      strcpy(nome, nome_uni);
+     id = 0;
  }
 
 Universidade::~Universidade()
 {
+}
+
+void Universidade::set_id(int i)
+{
+    id = i;
+}
+int Universidade::get_id()
+{
+    return id;
 }
 
 void Universidade::setNome(const char *nome_uni)

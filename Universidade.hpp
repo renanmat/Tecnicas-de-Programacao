@@ -14,12 +14,16 @@ using std::endl;
 class Universidade
 {
     private:
+        int id;
         char nome[100];
         ListaDepartamentos objListDepart;
 
     public:
         Universidade(int nd = 150, const char *nome_uni = "");
         ~Universidade();
+
+        void set_id(int i);
+        int get_id();
         void setNome(const char *nome_uni);
         char *getNome();
 

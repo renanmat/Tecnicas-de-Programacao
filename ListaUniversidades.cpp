@@ -4,6 +4,7 @@ ListaUniversidades::ListaUniversidades()
 {
     pElUnivPrim = nullptr;
     pElUnivAtual = nullptr;
+    id = 0;
 }
 ListaUniversidades::~ListaUniversidades()
 {
@@ -86,3 +87,6 @@ Universidade* ListaUniversidades::localiza_universidade(const char* nUniv)
     
     return nullptr;
 }
+
+void ListaUniversidades::set_id(int i) { id = i; }
+int ListaUniversidades::get_id() { return id; }

@@ -10,6 +10,7 @@ class ListaDepartamentos
         ElDepartamento* pElDepAtual;
         int numero_depart;
         int cont;
+        int id;
     
     public:
         ListaDepartamentos(int nd = 100, const char* n = "");
@@ -22,4 +23,7 @@ class ListaDepartamentos
         void liste_depart2();
 
         Departamento* localiza_depart(const char* n);
+
+        void set_id(int i);
+        int get_id();
 };

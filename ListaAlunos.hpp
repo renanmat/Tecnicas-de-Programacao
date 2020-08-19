@@ -11,6 +11,7 @@ class ListaAlunos
         int cont_alunos;
         int num_alunos;
         char nome[150];
+        int id;
     
     public:
         ListaAlunos(int quatAl = 0, const char* n = "");
@@ -30,5 +31,6 @@ class ListaAlunos
         //informa as notas e faltas do aluno
         void info_aluno(int ra);
 
-
+        void set_id(int i);
+        int get_id();
 };

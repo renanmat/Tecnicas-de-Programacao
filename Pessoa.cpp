@@ -22,10 +22,14 @@ void Pessoa::inicializa(int diaNas, int mesNas, int anoNas, const char *nomep)
     mes = mesNas;
     ano = anoNas;
     idade = -1;
+    id = 0;
 }
 
 void Pessoa::set_nome(const char* n) { strcpy(nome, n); }
 char* Pessoa::get_nome() { return nome; }
+
+void Pessoa::set_id(int i){ id = i;}
+int Pessoa::get_id(){ return id; }
 
 void Pessoa::calc_idade(int diaAt, int mesAt, int ano_atual){
     idade = ano_atual - ano;

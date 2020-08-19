@@ -8,7 +8,8 @@ class ElDepartamento
         Departamento* pDepart;
         ElDepartamento* pProx;
         ElDepartamento* pAnt;
-    
+        int id;
+
     public:
         ElDepartamento();
         ~ElDepartamento();
@@ -23,4 +24,7 @@ class ElDepartamento
         Departamento* get_depart();
 
         char* get_nomeDepart();
+
+        void set_id(int i);
+        int get_id();
 };

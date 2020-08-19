@@ -7,6 +7,7 @@ ListaAlunos::ListaAlunos(int quatAl, const char* n)
     strcpy(nome, n);
     pElAlunoPrim = nullptr;
     pElAlunoAtual = nullptr;
+    id = 0;
 }
 ListaAlunos::~ListaAlunos()
 {
@@ -157,3 +158,6 @@ void ListaAlunos::info_aluno(int ra)
     }
     
 }
+
+void ListaAlunos::set_id(int i) { id = i; }
+int ListaAlunos::get_id() { return id; }

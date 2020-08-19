@@ -8,6 +8,7 @@ class ElDisciplina
         Disciplina* pDisciplina;
         ElDisciplina* pProx;
         ElDisciplina* pAnt;
+        int id;
     
     public:
         ElDisciplina();
@@ -29,4 +30,7 @@ class ElDisciplina
         void set_antElDisc(ElDisciplina* pEd);
         //retorna um ponteiro para o elemento anterior da lista
         ElDisciplina* get_antElDisc();
+
+        void set_id(int i);
+        int get_id();
 };

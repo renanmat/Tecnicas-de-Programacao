@@ -20,12 +20,12 @@ Departamento::~Departamento()
     pUniversidade = nullptr;
 }
 
-void Departamento::setId(int i)
+void Departamento::set_id(int i)
 {
     id = i;
 }
 
-int Departamento::getId()
+int Departamento::get_id()
 {
     return id;
 }

@@ -82,6 +82,7 @@ void Principal::inicializa_universidade()
     Cambridge.inclui_depart(&Matematica);
     UTFPR.inclui_depart(&DAELN);
 
+    //Cadastra universidade na lista principal do sistema
     objMenu.cadastre_univer(&Princeton);
     objMenu.cadastre_univer(&Cambridge);
     objMenu.cadastre_univer(&UTFPR);
@@ -96,6 +97,7 @@ void Principal::inicializa_departamento()
     Matematica.set_univerAssocida(&Cambridge);
     DAELN.set_univerAssocida(&UTFPR);
 
+    //Cadastra departamento na lista principal do sistema
     objMenu.cadastre_depart(&Fisica);
     objMenu.cadastre_depart(&Astronomia);
     objMenu.cadastre_depart(&Matematica);
@@ -129,6 +131,7 @@ void Principal::inicializa_disciplina()
     Metodos2_2007.set_notas(2189, 7.5, 8.0, 0, 7 );
     Metodos2_2007.set_notas(1985, 9.45, 3.0, 10.0, 15);
 
+    //Cadastra disciplina na lista principal do sistema
     objMenu.cadastre_discp(&Computacao1_2006);
     objMenu.cadastre_discp(&Computacao2_2007);
     objMenu.cadastre_discp(&Introd_alg_2007);

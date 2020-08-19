@@ -7,6 +7,7 @@ class Nota
         double secParcial;
         double parcFinal;
         int nFaltas;
+        int id;
     
     public:
         Nota();
@@ -23,4 +24,7 @@ class Nota
 
         void set_nFaltas(int f);
         int get_nFaltas();
+
+        void set_id(int i);
+        int get_id();
 };

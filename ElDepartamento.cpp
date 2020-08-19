@@ -5,6 +5,7 @@ ElDepartamento::ElDepartamento()
     pProx = nullptr;
     pAnt = nullptr;
     pDepart = nullptr;
+    id = 0;
 }
 ElDepartamento::~ElDepartamento()
 {
@@ -44,3 +45,6 @@ char* ElDepartamento::get_nomeDepart()
 {
     return pDepart->getNome();
 }
+
+void ElDepartamento::set_id(int i) { id = i; }
+int ElDepartamento::get_id() { return id; }

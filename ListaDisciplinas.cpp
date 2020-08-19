@@ -13,6 +13,7 @@ ListaDisciplinas::ListaDisciplinas(int nd, const char* n)
     pElDiscAtual = nullptr;
     numero_disciplinas = nd;
     cont = 0;
+    id = 0;
 }
 
 ListaDisciplinas::~ListaDisciplinas()
@@ -111,3 +112,6 @@ void ListaDisciplinas::liste_disciplinas2()
         pAux = pAux->get_antElDisc();
     }
 }
+
+void ListaDisciplinas::set_id(int i) { id = i; }
+int ListaDisciplinas::get_id() { return id; }

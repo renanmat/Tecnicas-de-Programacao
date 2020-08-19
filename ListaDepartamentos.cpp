@@ -11,6 +11,7 @@ ListaDepartamentos::ListaDepartamentos(int nd, const char* n)
     pElDepAtual = nullptr;
     numero_depart = nd;
     cont = 0;
+    id = 0;
 }
 
 ListaDepartamentos::~ListaDepartamentos()
@@ -106,3 +107,6 @@ Departamento* ListaDepartamentos::localiza_depart(const char* n)
     }
     return nullptr;
 }
+
+void ListaDepartamentos::set_id(int i) { id = i; }
+int ListaDepartamentos::get_id() { return id; }

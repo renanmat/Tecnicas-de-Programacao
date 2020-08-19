@@ -11,6 +11,7 @@ class ListaDisciplinas
         ElDisciplina* pElDiscAtual;
         int numero_disciplinas;
         int cont;
+        int id;
     
     public:
         ListaDisciplinas(int nd = 200, const char* n = "");
@@ -25,4 +26,7 @@ class ListaDisciplinas
         void liste_disciplinas();
         //Os elementos sao listados do ultimo ate o primeiro
         void liste_disciplinas2();
+
+        void set_id(int i);
+        int get_id();
 };

@@ -5,6 +5,7 @@ ElUniversidade::ElUniversidade()
     pUniv = nullptr;
     pProx = nullptr;
     pAnt = nullptr;
+    id = 0;
 }
 ElUniversidade::~ElUniversidade()
 {
@@ -44,3 +45,6 @@ char* ElUniversidade::get_nomeUniv()
 {
     return pUniv->getNome();
 }
+
+void ElUniversidade::set_id(int i) { id = i; }
+int ElUniversidade::get_id() { return id; }

@@ -8,7 +8,8 @@ class ElUniversidade
         Universidade* pUniv;
         ElUniversidade* pProx;
         ElUniversidade* pAnt;
-    
+        int id;
+
     public:
         ElUniversidade();
         ~ElUniversidade();
@@ -23,5 +24,8 @@ class ElUniversidade
         ElUniversidade* get_ant();
 
         char* get_nomeUniv();
+
+        void set_id(int i);
+        int get_id();
 
 };

@@ -18,8 +18,8 @@ class Departamento
         Departamento(const char* pNome = "", int i = 0);
         ~Departamento();
 
-        void setId(int i);
-        int getId();
+        void set_id(int i);
+        int get_id();
 
 
         void setNome(const char* pNome);

@@ -8,6 +8,8 @@ class ListaUniversidades
         ElUniversidade* pElUnivPrim;
         ElUniversidade* pElUnivAtual;
 
+        int id;
+
     public:
         ListaUniversidades();
         ~ListaUniversidades();
@@ -17,4 +19,7 @@ class ListaUniversidades
         void liste_univ2();
 
         Universidade* localiza_universidade(const char* nUniv);
+
+        void set_id(int i);
+        int get_id();
 };

@@ -10,6 +10,7 @@ class ElAluno
         ElAluno* pProx;
         ElAluno* pAnt;
         Nota* pNota;
+        int id;
     
     public:
         ElAluno();
@@ -24,5 +25,8 @@ class ElAluno
         ElAluno* get_ant();
 
         Nota* get_notas();
+
+        void set_id(int i);
+        int get_id();
         
 };

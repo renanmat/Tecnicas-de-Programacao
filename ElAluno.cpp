@@ -8,6 +8,8 @@ ElAluno::ElAluno()
 
     pNota = nullptr;
     pNota = new Nota();
+
+    id = 0;
 }
 ElAluno::~ElAluno()
 {
@@ -48,3 +50,6 @@ Nota* ElAluno::get_notas()
 {
     return pNota;
 }
+
+void ElAluno::set_id(int i) { id = i; }
+int ElAluno::get_id() { return id; }
