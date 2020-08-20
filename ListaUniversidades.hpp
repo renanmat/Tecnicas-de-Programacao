@@ -22,4 +22,9 @@ class ListaUniversidades
 
         void set_id(int i);
         int get_id();
+
+        void limpa_lista();
+
+        void gravar_universidades();
+        void recuperar_universidades(int* cont);
 };

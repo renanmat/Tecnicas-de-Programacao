@@ -13,9 +13,9 @@ Principal::Principal():
     Ana(698745, 20, 1 , 200, "Ana" ),
 
     //Universidade
-    Princeton(-1,"Princeton"),
-    Cambridge(-1,"Cambridge"),
-    UTFPR(-1,"UTFPR"),
+    Princeton(0, -1,"Princeton"),
+    Cambridge(1, -1,"Cambridge"),
+    UTFPR(2, -1,"UTFPR"),
 
     //Departamento
     Fisica("Fisica"),

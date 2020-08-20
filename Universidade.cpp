@@ -1,11 +1,11 @@
  #include "Universidade.hpp"
  
  
- Universidade::Universidade(int nd, const char *nome_uni):
- objListDepart(-1, nome_uni)
+ Universidade::Universidade(int i,int nd, const char *nome_uni):
+ id(i), // set um id a universidade
+ objListDepart(nd, nome_uni)//passa para lista o numero de departamentos e o nome da universidade
  {
      strcpy(nome, nome_uni);
-     id = 0;
  }
 
 Universidade::~Universidade()

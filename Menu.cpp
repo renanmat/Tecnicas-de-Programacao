@@ -6,9 +6,10 @@ using std::cin;
 #include <string>
 using std::string;
 using std::getline;
-#include <stdio.h>
+
 
  Menu::Menu():
+ cont_idUniver{0},
  objLUniver(),
  objLDepart(),
  objLDiscip()
@@ -23,6 +24,7 @@ void Menu::cadastre_univer(Universidade* pu)
     if(pu != nullptr)
     {
         objLUniver.inclui_univ(pu);
+        cont_idUniver++;
     }
     else
     {
@@ -32,9 +34,12 @@ void Menu::cadastre_univer(Universidade* pu)
         getline(cin, nome);
 
         Universidade* pAux = new Universidade();
+        pAux->set_id(cont_idUniver++);
         pAux->setNome(nome.c_str());
 
         objLUniver.inclui_univ(pAux);
+
+        cout<<"Universidade cadastrada"<<endl;
     }
 }
 
@@ -143,11 +148,11 @@ void Menu::menu_cad()
                 cadastre_discp();
                 getchar();
                 break;
-            case 9:
-                cout<<"Obrigado! volte sempre!"<<endl;
+                case 9:
                 break;
             default:
                 cout<<"Opçao invalida!!"<<endl;
+                getchar();
         }
 
     }
@@ -172,24 +177,97 @@ void Menu::menu_exe()
         {
             case 1:
                 objLUniver.liste_univ();
-                getchar();
+                cin.ignore();
                 getchar();
                 break;
             case 2:
                 objLDepart.liste_depart();
-                getchar();
+                cin.ignore();
                 getchar();
                 break;
             case 3:
                 objLDiscip.liste_disciplinas();
-                getchar();
+                cin.ignore();
                 getchar();
                 break;
             case 9:
-                cout<<"Obrigado! volte sempre!"<<endl;
                 break;
             default:
                 cout<<"Opçao invalida!!"<<endl;
+                cin.ignore();
+                getchar();
+        }
+
+    }
+}
+
+void Menu::menu_grav()
+{
+    int op = -1;
+    
+    while(op != 9)
+    {
+        system("clear");
+        cout<<"####### MENU GRAVAR#######"<<endl;
+        cout<<"1 -   Gravar Universidades"<<endl;
+        // cout<<"2 -   Listar"<<endl;
+        // cout<<"3 -   Gravar"<<endl;
+        cout<<"9 -   Sair"<<endl;
+        
+        cin>>op;
+
+        switch(op)
+        {
+            case 1:
+                objLUniver.gravar_universidades();
+                getchar();
+                break;
+            // case 2:
+            //     menu_exe();
+            //     break;
+            case 9:
+                break;
+            default:
+                cout<<"Opçao invalida!!"<<endl;
+                getchar();
+        }
+
+    }
+}
+
+void Menu::menu_recup()
+{
+    int op = -1;
+    
+    while(op != 9)
+    {
+        system("clear");
+        cout<<"####### MENU RECUPERAR #######"<<endl;
+        cout<<"1 -   Recuperar Universidades"<<endl;
+        // cout<<"2 -   Listar"<<endl;
+        // cout<<"3 -   Gravar"<<endl;
+        // cout<<"4 -   Ler arquivo de lista"<<endl;
+        cout<<"9 -   Sair"<<endl;
+        
+        cin>>op;
+
+        switch(op)
+        {
+            case 1:
+            //passando o contador por referencia  para ser atualizado na hora de recuperar os aquivos
+                objLUniver.recuperar_universidades(&cont_idUniver);
+                break;
+            // case 2:
+            //     menu_exe();
+            //     break;
+            // case 3:
+            //     menu_grav();
+            //     break;
+            case 9:
+                break;
+            default:
+                cout<<"Opçao invalida!!"<<endl;
+                getchar();
         }
 
     }
@@ -205,6 +283,8 @@ void Menu::menu_principal()
         cout<<"####### MENU #######"<<endl;
         cout<<"1 -   Cadastrar"<<endl;
         cout<<"2 -   Listar"<<endl;
+        cout<<"3 -   Gravar"<<endl;
+        cout<<"4 -   Recuperar"<<endl;
         cout<<"9 -   Sair"<<endl;
         
         cin>>op;
@@ -216,6 +296,12 @@ void Menu::menu_principal()
                 break;
             case 2:
                 menu_exe();
+                break;
+            case 3:
+                menu_grav();
+                break;
+            case 4:
+                menu_recup();
                 break;
             case 9:
                 cout<<"Obrigado! volte sempre!"<<endl;

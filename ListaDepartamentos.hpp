@@ -13,7 +13,7 @@ class ListaDepartamentos
         int id;
     
     public:
-        ListaDepartamentos(int nd = 100, const char* n = "");
+        ListaDepartamentos(int nd = -1, const char* n = "");
         ~ListaDepartamentos();
 
         void set_nome(const char* n); 

@@ -19,7 +19,7 @@ class Universidade
         ListaDepartamentos objListDepart;
 
     public:
-        Universidade(int nd = 150, const char *nome_uni = "");
+        Universidade(int i = -1, int nd = 150, const char *nome_uni = "");
         ~Universidade();
 
         void set_id(int i);

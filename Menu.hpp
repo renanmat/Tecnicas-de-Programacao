@@ -5,6 +5,7 @@
 class Menu
 {
     private:
+        int cont_idUniver;
         ListaUniversidades objLUniver;
         ListaDepartamentos objLDepart;
         ListaDisciplinas objLDiscip;
@@ -17,13 +18,9 @@ class Menu
         void cadastre_depart(Departamento* pd = nullptr);
         void cadastre_discp(Disciplina* pd = nullptr);
 
-        void liste_univers();
-        void liste_depart();
-        void liste_discp();
-
-        // void gravar_LisUnivers();
-
         void menu_cad();
         void menu_exe();
+        void menu_grav();
+        void menu_recup();
         void menu_principal();
 };
