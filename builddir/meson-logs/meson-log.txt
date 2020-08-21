@@ -1,6 +1,6 @@
-Build started at 2020-08-19T10:30:42.484855
+Build started at 2020-08-21T14:04:28.353529
 Main binary: /usr/bin/python3
-Build Options: -Dbuildtype=debug
+Build Options: -Dbuildtype=debug -Dbackend=ninja
 Python system: Linux
 The Meson build system
 Version: 0.54.0
@@ -8,42 +8,14 @@ Source dir: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp
 Build dir: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir
 Build type: native build
 Using 'PKG_CONFIG_PATH' from environment with value: '/home/renan/Documentos/SFML-2.5.1'
+WARNING: PKG_CONFIG_PATH environment variable has changed between configurations, meson ignores this. Use -Dpkg_config_path to change pkg-config search path instead.
 Using 'PKG_CONFIG_PATH' from environment with value: '/home/renan/Documentos/SFML-2.5.1'
+WARNING: PKG_CONFIG_PATH environment variable has changed between configurations, meson ignores this. Use -Dpkg_config_path to change pkg-config search path instead.
 Project name: Sistema Academico
 Project version: undefined
-None of 'CXX' are defined in the environment, not changing global flags.
-None of 'CXXFLAGS' are defined in the environment, not changing global flags.
-None of 'LDFLAGS' are defined in the environment, not changing global flags.
-None of 'CPPFLAGS' are defined in the environment, not changing global flags.
-None of 'CXX_LD' are defined in the environment, not changing global flags.
-Sanity testing C++ compiler: c++
-Is cross compiler: False.
-Sanity check compiler command line: c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.cc -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
-Sanity check compile stdout:
-
------
-Sanity check compile stderr:
-
------
-Running test binary command: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.exe
 C++ compiler for the build machine: c++ (gcc 8.3.0 "c++ (Debian 8.3.0-6) 8.3.0")
 C++ linker for the build machine: c++ ld.bfd 2.31.1
 None of 'AR' are defined in the environment, not changing global flags.
-None of 'CXX' are defined in the environment, not changing global flags.
-None of 'CXXFLAGS' are defined in the environment, not changing global flags.
-None of 'LDFLAGS' are defined in the environment, not changing global flags.
-None of 'CPPFLAGS' are defined in the environment, not changing global flags.
-None of 'CXX_LD' are defined in the environment, not changing global flags.
-Sanity testing C++ compiler: c++
-Is cross compiler: False.
-Sanity check compiler command line: c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.cc -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
-Sanity check compile stdout:
-
------
-Sanity check compile stderr:
-
------
-Running test binary command: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/sanitycheckcpp.exe
 C++ compiler for the host machine: c++ (gcc 8.3.0 "c++ (Debian 8.3.0-6) 8.3.0")
 C++ linker for the host machine: c++ ld.bfd 2.31.1
 None of 'AR' are defined in the environment, not changing global flags.
@@ -57,8 +29,8 @@ Build targets in project: 1
 
 Found ninja-1.9.0.git.kitware.dyndep-1.jobserver-1 at /home/renan/.local/bin/ninja
 Running compile:
-Working directory:  /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmprp8fdb55
-Command line:  c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmprp8fdb55/testfile.cpp -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmprp8fdb55/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmp5c_5ftyx
+Command line:  c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmp5c_5ftyx/testfile.cpp -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/builddir/meson-private/tmp5c_5ftyx/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  

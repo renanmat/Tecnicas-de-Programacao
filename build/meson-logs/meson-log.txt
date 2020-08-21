@@ -1,4 +1,4 @@
-Build started at 2020-08-13T23:02:12.223523
+Build started at 2020-08-21T17:45:25.521556
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -29,8 +29,8 @@ Build targets in project: 1
 
 Found ninja-1.9.0.git.kitware.dyndep-1.jobserver-1 at /home/renan/.local/bin/ninja
 Running compile:
-Working directory:  /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpsz_uy57w
-Command line:  c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpsz_uy57w/testfile.cpp -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpsz_uy57w/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpogyn86wv
+Command line:  c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpogyn86wv/testfile.cpp -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/cod_cpp/build/meson-private/tmpogyn86wv/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  

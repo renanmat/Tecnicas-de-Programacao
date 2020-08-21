@@ -7,8 +7,8 @@ Pessoa(diaNas,mesNas,anoNas,nomep)
     pDepartamento = nullptr;
 }
 
-Professor::Professor():
-Pessoa()
+Professor::Professor(int i):
+Pessoa(i)
 {
     pUniversidade = nullptr;
     pDepartamento = nullptr;

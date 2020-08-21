@@ -11,12 +11,12 @@ class Pessoa{
     protected:
         int dia,mes,ano;
         int idade;
-        char nome[30];
+        char nome[150];
         int id;
 
     public:
         Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
-        Pessoa();
+        Pessoa(int i = -1);
         ~Pessoa();
         void inicializa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
 

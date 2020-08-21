@@ -5,6 +5,10 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+#include <fstream>
+using std::ofstream;
+using std::ifstream;
+using std::ios;
 
 ListaDisciplinas::ListaDisciplinas(int nd, const char* n)
 {
@@ -19,16 +23,7 @@ ListaDisciplinas::ListaDisciplinas(int nd, const char* n)
 ListaDisciplinas::~ListaDisciplinas()
 {
     //Desaloca todos os elementos da lista(exclui a lista)
-    ElDisciplina* pAux = pElDiscPrim;
-
-    while(pElDiscPrim != nullptr)
-    {
-        pElDiscPrim = pAux->get_proxElDisc();
-        delete pAux;
-        pAux = pElDiscPrim;
-    }
-
-    pElDiscAtual = nullptr;
+    limpa_lista();
 }
 
 void ListaDisciplinas::inclui_disciplina(Disciplina* pd)
@@ -61,7 +56,6 @@ void ListaDisciplinas::inclui_disciplina(Disciplina* pd)
             pElDiscAtual = pAux;
         }
          cont++; 
-         cout<<"Disciplina cadastrada!!"<<endl;
     }
     else
     {
@@ -83,7 +77,7 @@ void ListaDisciplinas::liste_disciplinas()
 {
     ElDisciplina* pAux = pElDiscPrim;
 
-    cout<<"Departamento "<<nome<<" lista de disciplinas:"<<endl;
+    cout<<nome<<" lista de disciplinas:"<<endl;
     
     while(pAux != nullptr)
     {
@@ -101,7 +95,7 @@ void ListaDisciplinas::liste_disciplinas2()
 {
     ElDisciplina* pAux = pElDiscAtual;
 
-    cout<<"Departamento "<<nome<<" lista 2 de disciplinas:"<<endl;
+    cout<<nome<<" lista 2 de disciplinas:"<<endl;
 
     while(pAux)
     {
@@ -115,3 +109,87 @@ void ListaDisciplinas::liste_disciplinas2()
 
 void ListaDisciplinas::set_id(int i) { id = i; }
 int ListaDisciplinas::get_id() { return id; }
+
+void ListaDisciplinas::limpa_lista()
+{
+    //Desaloca todos os elementos da lista(exclui a lista)
+    ElDisciplina* pAux = pElDiscPrim;
+
+    while(pElDiscPrim != nullptr)
+    {
+        pElDiscPrim = pAux->get_proxElDisc();
+        delete pAux;
+        pAux = pElDiscPrim;
+    }
+
+    pElDiscAtual = nullptr;
+}
+
+void ListaDisciplinas::grava_disciplinas()
+{
+    ofstream gravador_disciplina("arquivos/disciplinas.dat", ios::out);// criando/abrindo arquivo
+    if(!gravador_disciplina)//verifica se arquivo nao foi criado
+    {
+        std::cerr<<"Arquivo nao pode ser aberto/criado!"<<endl;
+        fflush(stdin);
+        getchar();
+        return;
+    }
+
+    ElDisciplina* pElD = pElDiscPrim;
+    Disciplina* pD= nullptr;
+
+    //percore lista de disciplina
+    while(pElD != nullptr)
+    {
+        pD = pElD->get_disciplina();
+
+        gravador_disciplina << pD->get_id()<<" "<<pD->get_nome()<<endl;//grava informaçoes no arquivo
+
+        pElD = pElD->get_proxElDisc();
+    }
+    gravador_disciplina.close();//fecha arquivo
+
+    cout<<"Disciplinas gravada com sucesso!"<<endl;
+    getchar();
+
+}
+
+void ListaDisciplinas::recupera_disciplinas (int* contId)
+{
+    ifstream recuperador_disc("arquivos/disciplinas.dat", ios::in);//abrindo arquivo
+    if(!recuperador_disc)//se nao abrir
+    {
+        std::cerr<<"Aquivo nao pode ser aberto!"<<endl;
+        fflush(stdin);
+        getchar();
+        return;
+    }
+
+    limpa_lista();
+
+    int i = 0;
+    char nomeDisc[150];
+    Disciplina* pD = nullptr;
+    *contId = 0;// zera o contador de ids de disciplina
+
+    while(!recuperador_disc.eof())//equanto nao encontra o fim do arquivo
+    {
+        recuperador_disc>>i>>nomeDisc;// passando dados do arquivo para as variaveis
+        if(0 != strcmp(nomeDisc,""))// se nomeDisc nao estiver vazio
+        {
+            pD = new Disciplina();
+            pD->set_id(i);
+            pD->set_nome(nomeDisc);
+
+            inclui_disciplina(pD);
+
+            (*contId)++;// a cada disciplina no arquivo o contador aumenta 1
+        }
+        strcpy(nomeDisc,"");// nomeDisc recebe uma string vazia(zerando o nomeDisc)
+    }
+    recuperador_disc.close();//fechando arquivo
+
+    cout<<"Disciplinas recuperadas com sucesso!!"<<endl;
+    getchar();
+}

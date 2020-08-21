@@ -1,5 +1,11 @@
 #include "ListaAlunos.hpp"
 
+#include <fstream>
+using std::ofstream;
+using std::ifstream;
+using std::ios;
+
+
 ListaAlunos::ListaAlunos(int quatAl, const char* n)
 { 
     cont_alunos = 0;
@@ -12,16 +18,7 @@ ListaAlunos::ListaAlunos(int quatAl, const char* n)
 ListaAlunos::~ListaAlunos()
 {
     //deleta elementos da lista encadiada
-    ElAluno* pAux = pElAlunoPrim;
-    while(pElAlunoPrim)
-    {
-        pElAlunoPrim = pAux->get_prox();
-        delete pAux;
-        pAux = pElAlunoPrim;
-    }
-
-    //Aterra ponteiros
-    pElAlunoAtual = nullptr;
+    limpa_lista();
 
     cont_alunos = 0;
 }
@@ -32,7 +29,7 @@ void ListaAlunos::set_nome(const char* n){ strcpy(nome, n); }
 void ListaAlunos::inclui_aluno(Aluno* pa)
 {
     //verifica se o ponteiro pa de aluno é nulo e verifica se qunatidade de alunos ainda é menor que 45  
-    if(pa != nullptr && cont_alunos < num_alunos)
+    if((pa != nullptr && cont_alunos < num_alunos) || (pa != nullptr && num_alunos == -1) )
     {
         //Cria ponteiro tipo ElAluno
         ElAluno* pAux;
@@ -77,7 +74,7 @@ void ListaAlunos::liste_alunos()
     //pAux recebe o primeiro elemento da lista
     ElAluno* pAux = pElAlunoPrim;
 
-    cout<<"Disciplina "<<nome<<" lista de Alunos:"<<endl;
+    cout<<nome<<" lista de Alunos:"<<endl;
 
     //verifica se nao é nulo
     while(pAux)
@@ -96,7 +93,7 @@ void ListaAlunos::liste_alunos2()
     //pAux recebe o ultimo elemento da lista
      ElAluno* pAux = pElAlunoAtual;
 
-    cout<<"Disciplina "<<nome<<" lista 2 de Alunos:"<<endl;
+    cout<<nome<<" lista 2 de Alunos:"<<endl;
     //verifica se nao é nulo
     while(pAux)
     {
@@ -161,3 +158,84 @@ void ListaAlunos::info_aluno(int ra)
 
 void ListaAlunos::set_id(int i) { id = i; }
 int ListaAlunos::get_id() { return id; }
+
+
+void ListaAlunos::limpa_lista()
+{
+    //deleta elementos da lista encadiada
+    ElAluno* pAux = pElAlunoPrim;
+    while(pElAlunoPrim)
+    {
+        pElAlunoPrim = pAux->get_prox();
+        delete pAux;
+        pAux = pElAlunoPrim;
+    }
+
+    //Aterra ponteiros
+    pElAlunoAtual = nullptr;
+}
+
+void ListaAlunos::gravar_alunos()
+{
+    ofstream gravadorAluno("arquivos/alunos.dat", ios::out);//abrindo/criando arquivo
+    if(!gravadorAluno)//se nao abriu/criou o aquivo da uma menssagem de erro
+    {
+        std::cerr<<"Aquivo nao pode ser aberto!!"<<endl;
+        fflush(stdin);
+        getchar();
+        return;
+    }
+
+    ElAluno* pElA = pElAlunoPrim;
+    Aluno* pA = nullptr;
+    //percore a lista
+    while(pElA != nullptr)
+    {
+        pA = pElA->get_aluno();
+        
+        gravadorAluno<< pA->get_id()<<" "<<pA->get_nome()<<endl;//gravando dados no arquivo
+
+        pElA = pElA->get_prox();
+    }
+    gravadorAluno.close();//fechado arquivo
+
+    cout<<"Alunos gravados com sucesso!"<<endl;
+    getchar();
+}
+
+void ListaAlunos::recuperar_alunos(int* contId)
+{
+    ifstream recuperador_alunos("arquivos/alunos.dat", ios::in);//abre o aquivo
+    if(!recuperador_alunos)//se nao abriu da uma mensagem de erro
+    {
+        std::cerr<<"Arquivo nao pode ser aberto!"<<endl;
+        fflush(stdin);
+        getchar();
+        return;
+    }
+    limpa_lista();//limpa a lista para nao aver duplicatas de alunos
+
+    *contId = 0;
+    char nomeAl[150];
+    int i = 0;
+    Aluno* pA = nullptr;
+
+    while(!recuperador_alunos.eof())//enquanto nao chegar o fim do aquivo
+    {
+        recuperador_alunos>>i>>nomeAl;//isere os dados do aquivo nas variaveis
+        if(0 != strcmp(nomeAl,""))//verifica se a variavel nao esta vazia
+        {
+            pA = new Aluno();//cria um novo aluno
+            pA->set_id(i);
+            pA->set_nome(nomeAl);
+
+            inclui_aluno(pA);//inclui aluno na lista
+            (*contId)++;
+        }
+        strcpy(nomeAl, "");//limpa a variavel 'nomeAL'
+    }
+    recuperador_alunos.close();//fecha o aquivo
+
+    cout<<"Alunos recuperados com sucesso!"<<endl;
+    getchar();
+}

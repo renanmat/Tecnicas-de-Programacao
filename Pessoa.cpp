@@ -2,10 +2,12 @@
 
 Pessoa::Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep)  
 {
+    id = - 1;
     inicializa(diaNas,mesNas,anoNas, nomep);
 }
 
-Pessoa::Pessoa()
+Pessoa::Pessoa(int i):
+id{i}
 {
     inicializa(0,0,0);
 }
@@ -22,7 +24,6 @@ void Pessoa::inicializa(int diaNas, int mesNas, int anoNas, const char *nomep)
     mes = mesNas;
     ano = anoNas;
     idade = -1;
-    id = 0;
 }
 
 void Pessoa::set_nome(const char* n) { strcpy(nome, n); }

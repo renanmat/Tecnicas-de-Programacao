@@ -13,7 +13,7 @@ class Aluno: public Pessoa
 
     public:
         Aluno(int ra, int diaNas, int mesNas, int anoNas, const char *nomep = "");
-        Aluno();
+        Aluno(int i = -1);
         ~Aluno();
 
         void set_ra(int ra);

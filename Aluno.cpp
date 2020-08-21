@@ -9,8 +9,8 @@
     pAnt = nullptr;
  }
 
-Aluno::Aluno():
-Pessoa()
+Aluno::Aluno(int i):
+Pessoa(i)
 {
     regAc = 0;
     pProx = nullptr;

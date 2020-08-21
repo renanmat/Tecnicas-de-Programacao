@@ -14,7 +14,7 @@ class ListaAlunos
         int id;
     
     public:
-        ListaAlunos(int quatAl = 0, const char* n = "");
+        ListaAlunos(int quatAl = -1, const char* n = "");
         ~ListaAlunos();
 
         void set_nome(const char* n);
@@ -33,4 +33,9 @@ class ListaAlunos
 
         void set_id(int i);
         int get_id();
+
+        void limpa_lista();
+
+        void gravar_alunos();
+        void recuperar_alunos(int* contId);
 };

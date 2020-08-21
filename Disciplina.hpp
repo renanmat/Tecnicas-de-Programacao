@@ -15,7 +15,7 @@ class Disciplina
         ListaAlunos objLAlunos;
 
     public:
-        Disciplina(int numAlunos = 45, const char* n = "");
+        Disciplina(int i = -1, int numAlunos = 45, const char* n = "");
         ~Disciplina();
 
         //gets e sets para atributos

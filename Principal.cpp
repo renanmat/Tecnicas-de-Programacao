@@ -1,13 +1,14 @@
 #include "Principal.hpp"
 
 
+
 Principal::Principal():
     //Professore
     Newton(4,1,1643, "Newton"),
     Einstein(14,3,1879, "Einstein"),
 
     //Aluno
-    Renan(2189, 9, 5, 1995, "Renan M"),
+    Renan(2189, 9, 5, 1995, "RenanM"),
     Matheus(1234,9,8,2000,"Matheus"),
     Daniel(1985, 8, 8, 1988, "Daniel"),
     Ana(698745, 20, 1 , 200, "Ana" ),
@@ -18,20 +19,19 @@ Principal::Principal():
     UTFPR(2, -1,"UTFPR"),
 
     //Departamento
-    Fisica("Fisica"),
-    Matematica("Matematica"),
-    Astronomia("Astronomia"),
-    DAELN("Eletronica UTFPR"),
+    Fisica("Fisica", 0),
+    Matematica("Matematica", 1),
+    Astronomia("Astronomia", 2),
+    DAELN("EletronicaUTFPR", 3),
 
     //Disciplina
-    Computacao1_2006(),
-    Computacao2_2007(),
-    Introd_alg_2007(),
-    Metodos2_2007(),
+    Computacao1_2006(0),
+    Computacao2_2007(1),
+    Introd_alg_2007(2),
+    Metodos2_2007(3),
     
     //Menu
     objMenu()
-
 {  
     //Ponteiro que armazena data e hora
     struct tm *data_hora_atual;
@@ -60,6 +60,7 @@ void Principal::inicializa()
     inicializa_universidade();
     inicializa_departamento();
     inicializa_disciplina();
+    inicializa_aluno();
 }
 
 void Principal::inicializa_professor()
@@ -69,8 +70,17 @@ void Principal::inicializa_professor()
     Einstein.setUniversidade(&Princeton);
 
     //Associa os obj departamento a obj pessoa
-    Einstein.setDepartamento(&Fisica);
     Newton.setDepartamento(&Matematica);
+    Einstein.setDepartamento(&Fisica);
+
+    //isere id
+    Newton.set_id(0);
+    Einstein.set_id(1);
+
+    //cadastra professor na lista principal
+    objMenu.cadastre_professor(&Newton);
+    objMenu.cadastre_professor(&Einstein);
+
 }
 
 
@@ -99,18 +109,18 @@ void Principal::inicializa_departamento()
 
     //Cadastra departamento na lista principal do sistema
     objMenu.cadastre_depart(&Fisica);
-    objMenu.cadastre_depart(&Astronomia);
     objMenu.cadastre_depart(&Matematica);
+    objMenu.cadastre_depart(&Astronomia);
     objMenu.cadastre_depart(&DAELN);
 }
 
 void Principal::inicializa_disciplina()
-{
+{   
     //set nomes
-    Computacao1_2006.set_nome("Computacao 1 2006");
-    Computacao2_2007.set_nome("Computacao 2 2007");
-    Introd_alg_2007.set_nome("Introducao a algoritmos 2007");
-    Metodos2_2007.set_nome("Metodos II");
+    Computacao1_2006.set_nome("Computacao-1-2006");
+    Computacao2_2007.set_nome("Computacao-2-2007");
+    Introd_alg_2007.set_nome("Introducao-a-algoritmos-2007");
+    Metodos2_2007.set_nome("Metodos-II");
 
     // agrega (agregaçao fraca) as disciplinas ao departamento
     Computacao1_2006.set_departAssociado(&DAELN);
@@ -140,6 +150,17 @@ void Principal::inicializa_disciplina()
 
 void Principal::inicializa_aluno()
 {
+    //set ids
+    Renan.set_id(0);
+    Matheus.set_id(1);
+    Daniel.set_id(2);
+    Ana.set_id(3);
+
+    //adiciona na lista principal
+    objMenu.cadastre_alunos(&Renan);
+    objMenu.cadastre_alunos(&Matheus);
+    objMenu.cadastre_alunos(&Daniel);
+    objMenu.cadastre_alunos(&Ana);
 }
 
 //# # # # # # Executar # # # # # #

@@ -13,7 +13,7 @@ class Professor : public Pessoa
 
     public:
         Professor(int diaNas, int mesNas, int anoNas, const char *nomep = "");
-        Professor();
+        Professor(int i = -1); // 'i' id do professor
         ~Professor();
 
         //metodo que permite associar uma Universidade a uma Pessoa

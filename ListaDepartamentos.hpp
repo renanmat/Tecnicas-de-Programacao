@@ -26,4 +26,9 @@ class ListaDepartamentos
 
         void set_id(int i);
         int get_id();
+
+        void limpa_lista();
+
+        void grava_departamentos();
+        void recuperar_departamentos(int* cont);
 };

@@ -6,11 +6,11 @@
 using std::cout;
 using std::endl;
 
-Disciplina::Disciplina(int numAlunos, const char* n):
+Disciplina::Disciplina(int i, int numAlunos, const char* n):
+id{i},
 objLAlunos(numAlunos, n)
 {
     strcpy(area_conhecimento, "");
-    id = 0;
     strcpy(nome, n);
     pDepartAssociado = nullptr;
 

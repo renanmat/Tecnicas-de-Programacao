@@ -124,7 +124,7 @@ void ListaUniversidades::gravar_universidades()
     }
 
     gravarUniver.close(); // fecha arquivo
-    cout<<"Gravado com sucesso!"<<endl;
+    cout<<"Universidades gravadas com sucesso!"<<endl;
     getchar();
 }
 
@@ -162,7 +162,7 @@ void ListaUniversidades::recuperar_universidades(int* cont)
 
     }
     recuperaUniver.close(); //fecha o arquivo
-    cout<<"Arquivo recuperado com sucesso!"<<endl;
-    std::cin.ignore();
+
+    cout<<"Universidades recuperadas com sucesso!"<<endl;
     getchar();
 }

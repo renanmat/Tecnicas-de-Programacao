@@ -29,4 +29,9 @@ class ListaDisciplinas
 
         void set_id(int i);
         int get_id();
+
+        void limpa_lista();
+
+        void grava_disciplinas();
+        void recupera_disciplinas(int* contId);
 };

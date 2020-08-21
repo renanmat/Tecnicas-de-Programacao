@@ -1,10 +1,10 @@
 #ifndef _PRINCIPAL_HPP_
 #define _PRINCIPAL_HPP_
 
-#include "Professor.hpp"
 #include "Aluno.hpp"
 #include "Disciplina.hpp"
 #include "Menu.hpp"
+
 
 #include <time.h> // para pegar data atual do sistema
 
