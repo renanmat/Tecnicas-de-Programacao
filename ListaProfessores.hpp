@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ElProfessor.hpp"
 
 class ListaProfessores
@@ -18,6 +20,6 @@ class ListaProfessores
 
         void limpar_lista();
 
-        void gravar_professores();
+        void gravar_professores(int tamanhoL);
         void recuperar_professores(int* contId);
 };

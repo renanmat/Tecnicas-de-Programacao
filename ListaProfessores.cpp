@@ -4,6 +4,30 @@
 using std::ofstream;
 using std::ifstream;
 using std::ios;
+#include <string>
+using std::string;
+
+void grava_stringProf(const char* n, ofstream* arq)
+{
+    string nomeN(n); // nomeN recebe o nome  do elemento da lista
+    int tamanho = nomeN.size(); // 'tamanho' recebe o tamanho da string
+
+    arq->write((char*)&tamanho,sizeof(tamanho));//grava primeiro o tamasnho da string
+    arq->write((char*)&nomeN[0], tamanho);//depois grava a string
+}
+
+string recuperar_stringProf(ifstream* arq)
+{
+    string nomeN;
+    int tamanho = 0;
+
+    arq->read((char*)&tamanho,sizeof(tamanho)); // recupera o tanho da string
+
+    nomeN.resize(tamanho);// 'nomeDep' realoca o tamho para caber a string
+    arq->read((char*)&nomeN[0],tamanho); // recupera a string
+    
+    return nomeN;
+}
 
 ListaProfessores::ListaProfessores(const char* n)
 {
@@ -82,9 +106,9 @@ void ListaProfessores::limpar_lista()
     pElProfAtual = nullptr;
 }
 
-void ListaProfessores::gravar_professores()
+void ListaProfessores::gravar_professores(int tamanhoL)
 {
-    ofstream gravador_prof("arquivos/professores.dat", ios::out);//abrindo arquivo
+    ofstream gravador_prof("arquivos/professores.dat", ios::binary | ios::out);//abrindo arquivo
     if(!gravador_prof)//se nao coseguil abrir arquivo retorna uma menssagem de erro
     {
         std::cerr<<"Aquivo nao pode ser aberto"<<endl;
@@ -93,6 +117,8 @@ void ListaProfessores::gravar_professores()
         return;
     }
 
+    gravador_prof.write((char*)&tamanhoL, sizeof(tamanhoL));// gravando o tamanho da lista
+
     Professor* pP = nullptr;
     ElProfessor* pEl = pElProfPrim;
     //percore a lista de professores
@@ -100,8 +126,10 @@ void ListaProfessores::gravar_professores()
     {
         pP = pEl->get_professor();
 
-        gravador_prof<<pP->get_id()<<" "<<pP->get_nome()<<endl; // grava dados no arquivo
-
+        grava_stringProf(pP->get_nome(), &gravador_prof); // grava o nome do professor
+        int i = pP->get_id();
+        gravador_prof.write((char*)&i, sizeof(i)); // grava o id do professor
+        
         pEl = pEl->get_prox();
     }
     gravador_prof.close(); //fecha arquivo
@@ -113,7 +141,7 @@ void ListaProfessores::gravar_professores()
 
 void ListaProfessores::recuperar_professores(int* contId)
 {
-    ifstream recuperador_prof("arquivos/professores.dat", ios::in);//abre o arquivo
+    ifstream recuperador_prof("arquivos/professores.dat", ios::binary | ios::in);//abre o arquivo
     if(!recuperador_prof)// se nao conseguil abrir arquivo retorna uma menssagem de erro
     {
         std::cerr<<"Arquivo nao pode ser aberto"<<endl;
@@ -124,25 +152,25 @@ void ListaProfessores::recuperar_professores(int* contId)
 
     limpar_lista(); // zera a lista para nao ter duplicatas de professores
 
+    int tamanhoL = 0;
+    recuperador_prof.read((char*)&tamanhoL, sizeof(tamanhoL));//recupera o tamanho da lista
+
+    *contId = tamanhoL; // atualiza o contador de ids de acordo com o tamanho da lista
+
     Professor* pP = nullptr;
     int i = 0;
-    char nomeP[150];
-    *contId = 0; // zera o contador de ids de professores
-
-    while(!recuperador_prof.eof())// enquanto nao chega no fim do arquivo
+    string nomeP;
+    
+    for(int j = 0; j < tamanhoL; j++)
     {
-        recuperador_prof>>i>>nomeP; // passa os dados do arquivo para as variaveis
+        nomeP = recuperar_stringProf(&recuperador_prof);//recupera o nome do professor
+        recuperador_prof.read((char*)&i, sizeof(i));// recupera id do professor
 
-        if(0 != strcmp(nomeP, ""))//verifica se a variavel 'nomeP' nao esta vazia
-        {
-            pP = new Professor(i); // cria e isere o id em professore
-            pP->set_nome(nomeP);
+        pP = new Professor();
+        pP->set_id(i);
+        pP->set_nome(nomeP.c_str());
 
-            inclui_professor(pP); //inclui professor na lista
-
-            (*contId)++;// atualiza o contador de ids
-        }
-        strcpy(nomeP, ""); //esvazia a varivel 'nomeP'
+        inclui_professor(pP);
 
     }
     recuperador_prof.close();//fecha arquivo

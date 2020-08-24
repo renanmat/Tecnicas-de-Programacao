@@ -117,10 +117,10 @@ void Principal::inicializa_departamento()
 void Principal::inicializa_disciplina()
 {   
     //set nomes
-    Computacao1_2006.set_nome("Computacao-1-2006");
-    Computacao2_2007.set_nome("Computacao-2-2007");
-    Introd_alg_2007.set_nome("Introducao-a-algoritmos-2007");
-    Metodos2_2007.set_nome("Metodos-II");
+    Computacao1_2006.set_nome("Computacao 1 2006");
+    Computacao2_2007.set_nome("Computacao 2 2007");
+    Introd_alg_2007.set_nome("Introducao a algoritmos 2007");
+    Metodos2_2007.set_nome("Metodos II");
 
     // agrega (agregaçao fraca) as disciplinas ao departamento
     Computacao1_2006.set_departAssociado(&DAELN);

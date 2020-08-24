@@ -7,6 +7,30 @@ using std::endl;
 using std::ofstream;
 using std::ifstream;
 using std::ios;
+#include <string>
+using std::string;
+
+void grava_stringDep(const char* n, ofstream* arq)
+{
+    string nomeN(n); // nomeN recebe o nome  do elemento da lista
+    int tamanho = nomeN.size(); // 'tamanho' recebe o tamnho da string
+
+    arq->write((char*)&tamanho,sizeof(tamanho));//grava primeiro o tamnho da string
+    arq->write((char*)&nomeN[0], tamanho);//depois grava a string
+}
+
+string recuperar_stringDep(ifstream* arq)
+{
+    string nomeN;
+    int tamanho = 0;
+
+    arq->read((char*)&tamanho,sizeof(tamanho)); // recupera o tanho da string
+
+    nomeN.resize(tamanho);// 'nomeDep' realoca o tamho para caber a string
+    arq->read((char*)&nomeN[0],tamanho); // recupera a string
+    
+    return nomeN;
+}
 
 ListaDepartamentos::ListaDepartamentos(int nd, const char* n)
 {
@@ -119,9 +143,9 @@ void ListaDepartamentos::limpa_lista() // desaloca os elementos da lista
     pElDepAtual = nullptr;
 }
 
-void ListaDepartamentos::grava_departamentos()
+void ListaDepartamentos::grava_departamentos(int tamanhoList)
 {
-    ofstream gravador_depart("arquivos/departamentos.dat", ios::out); //criando arquivo
+    ofstream gravador_depart("arquivos/departamentos.dat", ios::binary | ios::out); //criando arquivo
     if(!gravador_depart)// verificando se o arquivo foi criado
     {
         std::cerr<<"Erro! arquivo nao pode ser criado!"<<endl;
@@ -129,13 +153,19 @@ void ListaDepartamentos::grava_departamentos()
         return;
     }
 
+    gravador_depart.write((char*)&tamanhoList, sizeof(tamanhoList));//gravando a quantidade de itens da lista
+
     ElDepartamento* pElD = pElDepPrim;
     Departamento* pD = nullptr;
     // passa pelos elementos da lista 
     while(pElD != nullptr) 
     {
         pD = pElD->get_depart();
-        gravador_depart << pD->get_id()<<" "<<pD->getNome()<<endl; // gravando informaçoes no arquivo
+        
+        grava_stringDep(pD->getNome(), &gravador_depart); //grava a string e o tamanho da string
+
+        int i = pD->get_id();
+        gravador_depart.write((char*)&i, sizeof(i)); // gravar o id
 
         pElD = pElD->get_prox();
     }
@@ -147,7 +177,7 @@ void ListaDepartamentos::grava_departamentos()
 void ListaDepartamentos::recuperar_departamentos(int* c)
 {
 
-    ifstream recuperador_depart("arquivos/departamentos.dat", ios::in);//abre o arquivo
+    ifstream recuperador_depart("arquivos/departamentos.dat", ios::binary | ios::in);//abre o arquivo tipo binario
     if(!recuperador_depart)//verifica se foi aberto
     {
         std::cerr<<"Arquivo nao pode ser aberto!"<<endl;
@@ -159,25 +189,25 @@ void ListaDepartamentos::recuperar_departamentos(int* c)
     *c = 0; //zerando o contador de  ids de departamentos
 
     int i = 0;// id
-    char nomeDepart[150];
+    string nomeDepart;
     Departamento* pD = nullptr;
 
-    while(!recuperador_depart.eof())//enquanto nao chega no fim do arquivo
+    int tamanhoL = 0;
+    recuperador_depart.read((char*)&tamanhoL,sizeof(tamanhoL));//recuperando a quantidade de itens da lista
+
+    for(int j = 0; j < tamanhoL; j++)
     {
-        
-        recuperador_depart>>i>>nomeDepart; //passa os dados do arquivo para as variaveis
+        nomeDepart = recuperar_stringDep(&recuperador_depart);//recuperando o nome do arquivo
+        recuperador_depart.read((char*)&i, sizeof(i));//recuperando o id do arquivo
 
-        if(0 != strcmp(nomeDepart,"")) // verifica se a variavel nao esta vazia
-        {
-            pD = new Departamento();
-            pD->set_id(i);
-            pD->setNome(nomeDepart);
+        pD = new Departamento();
+        pD->set_id(i);
+        pD->setNome(nomeDepart.c_str());
 
-            inclui_depart(pD);
-            (*c)++;
-        }
-        strcpy(nomeDepart, "");
+        inclui_depart(pD);
     }
+    (*c) = tamanhoL; // passando o tamanho da lista para o contador de ids de departamento
+
     recuperador_depart.close();//fecha o arquivo
 
     cout<<"Departamentos recuperados com sucesso!"<<endl;

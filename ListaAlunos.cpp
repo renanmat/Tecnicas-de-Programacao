@@ -4,6 +4,30 @@
 using std::ofstream;
 using std::ifstream;
 using std::ios;
+#include <string>
+using std::string;
+
+void grava_stringAluno(const char* n, ofstream* arq)
+{
+    string nomeN(n); // nomeN recebe o nome  do elemento da lista
+    int tamanho = nomeN.size(); // 'tamanho' recebe o tamanho da string
+
+    arq->write((char*)&tamanho,sizeof(tamanho));//grava primeiro o tamasnho da string
+    arq->write((char*)&nomeN[0], tamanho);//depois grava a string
+}
+
+string recuperar_stringAluno(ifstream* arq)
+{
+    string nomeN;
+    int tamanho = 0;
+
+    arq->read((char*)&tamanho,sizeof(tamanho)); // recupera o tanho da string
+
+    nomeN.resize(tamanho);// 'nomeDep' realoca o tamho para caber a string
+    arq->read((char*)&nomeN[0],tamanho); // recupera a string
+    
+    return nomeN;
+}
 
 
 ListaAlunos::ListaAlunos(int quatAl, const char* n)
@@ -175,9 +199,9 @@ void ListaAlunos::limpa_lista()
     pElAlunoAtual = nullptr;
 }
 
-void ListaAlunos::gravar_alunos()
+void ListaAlunos::gravar_alunos(int tamanhoL)
 {
-    ofstream gravadorAluno("arquivos/alunos.dat", ios::out);//abrindo/criando arquivo
+    ofstream gravadorAluno("arquivos/alunos.dat", ios::binary | ios::out);//abrindo/criando arquivo
     if(!gravadorAluno)//se nao abriu/criou o aquivo da uma menssagem de erro
     {
         std::cerr<<"Aquivo nao pode ser aberto!!"<<endl;
@@ -186,6 +210,8 @@ void ListaAlunos::gravar_alunos()
         return;
     }
 
+    gravadorAluno.write((char*)&tamanhoL, sizeof(tamanhoL));//gravando o tamanho da lista
+
     ElAluno* pElA = pElAlunoPrim;
     Aluno* pA = nullptr;
     //percore a lista
@@ -193,7 +219,10 @@ void ListaAlunos::gravar_alunos()
     {
         pA = pElA->get_aluno();
         
-        gravadorAluno<< pA->get_id()<<" "<<pA->get_nome()<<endl;//gravando dados no arquivo
+        grava_stringAluno(pA->get_nome(), &gravadorAluno); // gravando o nome e o tamanho do nome
+
+        int i = pA->get_id();
+        gravadorAluno.write((char*)&i, sizeof(i));//gravando o id do aluno
 
         pElA = pElA->get_prox();
     }
@@ -205,7 +234,7 @@ void ListaAlunos::gravar_alunos()
 
 void ListaAlunos::recuperar_alunos(int* contId)
 {
-    ifstream recuperador_alunos("arquivos/alunos.dat", ios::in);//abre o aquivo
+    ifstream recuperador_alunos("arquivos/alunos.dat", ios::binary | ios::in);//abre o aquivo
     if(!recuperador_alunos)//se nao abriu da uma mensagem de erro
     {
         std::cerr<<"Arquivo nao pode ser aberto!"<<endl;
@@ -215,24 +244,25 @@ void ListaAlunos::recuperar_alunos(int* contId)
     }
     limpa_lista();//limpa a lista para nao aver duplicatas de alunos
 
-    *contId = 0;
-    char nomeAl[150];
+    int tamanhoL = 0;
+    recuperador_alunos.read((char*)&tamanhoL, sizeof(tamanhoL));
+
+    *contId = tamanhoL; // contador de ids é atualizado de acordo com o tamanho de elementos do arquivo
+
+    string nomeAl;
     int i = 0;
     Aluno* pA = nullptr;
 
-    while(!recuperador_alunos.eof())//enquanto nao chegar o fim do aquivo
+    for(int j = 0; j < tamanhoL; j++)
     {
-        recuperador_alunos>>i>>nomeAl;//isere os dados do aquivo nas variaveis
-        if(0 != strcmp(nomeAl,""))//verifica se a variavel nao esta vazia
-        {
-            pA = new Aluno();//cria um novo aluno
-            pA->set_id(i);
-            pA->set_nome(nomeAl);
+        nomeAl = recuperar_stringAluno(&recuperador_alunos);//recupera o nome do aluno
+        recuperador_alunos.read((char*)&i, sizeof(i));//recupera o id do aluno
 
-            inclui_aluno(pA);//inclui aluno na lista
-            (*contId)++;
-        }
-        strcpy(nomeAl, "");//limpa a variavel 'nomeAL'
+        pA = new Aluno();
+        pA->set_id(i);
+        pA->set_nome(nomeAl.c_str());
+
+        inclui_aluno(pA); // inclui aluno na lista principal
     }
     recuperador_alunos.close();//fecha o aquivo
 

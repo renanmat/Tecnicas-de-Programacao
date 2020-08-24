@@ -32,6 +32,6 @@ class ListaDisciplinas
 
         void limpa_lista();
 
-        void grava_disciplinas();
+        void grava_disciplinas(int tamanhoL);
         void recupera_disciplinas(int* contId);
 };

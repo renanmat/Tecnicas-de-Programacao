@@ -25,6 +25,6 @@ class ListaUniversidades
 
         void limpa_lista();
 
-        void gravar_universidades();
+        void gravar_universidades(int tamList);
         void recuperar_universidades(int* cont);
 };

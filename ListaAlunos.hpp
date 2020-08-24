@@ -36,6 +36,6 @@ class ListaAlunos
 
         void limpa_lista();
 
-        void gravar_alunos();
+        void gravar_alunos(int tamanhoL);
         void recuperar_alunos(int* contId);
 };

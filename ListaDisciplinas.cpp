@@ -9,6 +9,30 @@ using std::endl;
 using std::ofstream;
 using std::ifstream;
 using std::ios;
+#include <string>
+using std::string;
+
+void grava_stringDisc(const char* n, ofstream* arq)
+{
+    string nomeN(n); // nomeN recebe o nome  do elemento da lista
+    int tamanho = nomeN.size(); // 'tamanho' recebe o tamnho da string
+
+    arq->write((char*)&tamanho,sizeof(tamanho));//grava primeiro o tamnho da string
+    arq->write((char*)&nomeN[0], tamanho);//depois grava a string
+}
+
+string recuperar_stringDisc(ifstream* arq)
+{
+    string nomeN;
+    int tamanho = 0;
+
+    arq->read((char*)&tamanho,sizeof(tamanho)); // recupera o tanho da string
+
+    nomeN.resize(tamanho);// 'nomeDep' realoca o tamho para caber a string
+    arq->read((char*)&nomeN[0],tamanho); // recupera a string
+    
+    return nomeN;
+}
 
 ListaDisciplinas::ListaDisciplinas(int nd, const char* n)
 {
@@ -125,9 +149,9 @@ void ListaDisciplinas::limpa_lista()
     pElDiscAtual = nullptr;
 }
 
-void ListaDisciplinas::grava_disciplinas()
+void ListaDisciplinas::grava_disciplinas(int tamanhoL)
 {
-    ofstream gravador_disciplina("arquivos/disciplinas.dat", ios::out);// criando/abrindo arquivo
+    ofstream gravador_disciplina("arquivos/disciplinas.dat", ios::binary | ios::out);// criando/abrindo arquivo
     if(!gravador_disciplina)//verifica se arquivo nao foi criado
     {
         std::cerr<<"Arquivo nao pode ser aberto/criado!"<<endl;
@@ -135,6 +159,8 @@ void ListaDisciplinas::grava_disciplinas()
         getchar();
         return;
     }
+
+    gravador_disciplina.write((char*)&tamanhoL, sizeof(tamanhoL));//gravando tamanho da lista
 
     ElDisciplina* pElD = pElDiscPrim;
     Disciplina* pD= nullptr;
@@ -144,7 +170,10 @@ void ListaDisciplinas::grava_disciplinas()
     {
         pD = pElD->get_disciplina();
 
-        gravador_disciplina << pD->get_id()<<" "<<pD->get_nome()<<endl;//grava informaçoes no arquivo
+        grava_stringDisc(pD->get_nome(), &gravador_disciplina);//gravando nome e tamanho do nome
+
+        int i = pD->get_id();
+        gravador_disciplina.write((char*)&i, sizeof(i));//gravando o id no arquivo
 
         pElD = pElD->get_proxElDisc();
     }
@@ -169,25 +198,26 @@ void ListaDisciplinas::recupera_disciplinas (int* contId)
     limpa_lista();
 
     int i = 0;
-    char nomeDisc[150];
+    string nomeDisc;
     Disciplina* pD = nullptr;
     *contId = 0;// zera o contador de ids de disciplina
 
-    while(!recuperador_disc.eof())//equanto nao encontra o fim do arquivo
+    int tamanhoL = 0 ;
+    recuperador_disc.read((char*)&tamanhoL, sizeof(tamanhoL));
+
+    for(int j = 0; j < tamanhoL; j++ )
     {
-        recuperador_disc>>i>>nomeDisc;// passando dados do arquivo para as variaveis
-        if(0 != strcmp(nomeDisc,""))// se nomeDisc nao estiver vazio
-        {
-            pD = new Disciplina();
-            pD->set_id(i);
-            pD->set_nome(nomeDisc);
+        nomeDisc = recuperar_stringDisc(&recuperador_disc); // recupera o nome da disciplina
+        recuperador_disc.read((char*)&i, sizeof(i)); // recupera o id da disciplina
 
-            inclui_disciplina(pD);
-
-            (*contId)++;// a cada disciplina no arquivo o contador aumenta 1
-        }
-        strcpy(nomeDisc,"");// nomeDisc recebe uma string vazia(zerando o nomeDisc)
+        pD = new Disciplina();
+        pD->set_id(i);
+        pD->set_nome(nomeDisc.c_str());
+        
+        inclui_disciplina(pD); // inclui disciplina na lista atual
     }
+    (*contId) = tamanhoL; // atualiza o contador de id de acordo com o tamanho da lista
+
     recuperador_disc.close();//fechando arquivo
 
     cout<<"Disciplinas recuperadas com sucesso!!"<<endl;

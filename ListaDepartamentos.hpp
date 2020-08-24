@@ -29,6 +29,6 @@ class ListaDepartamentos
 
         void limpa_lista();
 
-        void grava_departamentos();
+        void grava_departamentos(int tamanhoList);
         void recuperar_departamentos(int* cont);
 };

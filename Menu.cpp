@@ -192,11 +192,11 @@ void Menu::cadastre_professor(Professor* pP)
 
 void Menu::gravar_todos()
 {
-    objLUniver.gravar_universidades();
-    objLDepart.grava_departamentos();
-    objLDiscip.grava_disciplinas();
-    objLAluno.gravar_alunos();
-    objLProfesores.gravar_professores();
+    objLUniver.gravar_universidades(cont_idUniver);
+    objLDepart.grava_departamentos(cont_idDepart);
+    objLDiscip.grava_disciplinas(cont_idDiscip);
+    objLAluno.gravar_alunos(cont_idAluno);
+    objLProfesores.gravar_professores(cont_idProf);
 }
 void Menu::recuperar_todos()
 {
@@ -334,24 +334,25 @@ void Menu::menu_grav()
                 gravar_todos();
                 break;
             case 1:
-                objLUniver.gravar_universidades();
+                objLUniver.gravar_universidades(cont_idUniver);
                 getchar();
                 break;
             case 2:
-                objLDepart.grava_departamentos();
+                objLDepart.grava_departamentos(cont_idDepart);
                 getchar();
                 break;
             case 3:
-                objLDiscip.grava_disciplinas();
+                objLDiscip.grava_disciplinas(cont_idDiscip);
                 getchar();
                 break;
             case 4:
-                objLAluno.gravar_alunos();
+                objLAluno.gravar_alunos(cont_idAluno);
                 getchar();
+                break;
             case 5:
-                objLProfesores.gravar_professores();
+                objLProfesores.gravar_professores(cont_idProf);
                 getchar();
-            break;
+                break;
             case 9:
                 break;
             default:

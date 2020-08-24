@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Professor.hpp"
 
 class ElProfessor
