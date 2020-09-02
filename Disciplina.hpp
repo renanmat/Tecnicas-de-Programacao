@@ -36,10 +36,5 @@ class Disciplina
         void liste_alunos();
         void liste_alunos2();
 
-        //recebe as notas e faltas do aluno
-        void set_notas(int ra, double n1, double n2, double f, int nFalt);
-        //informa as notas e faltas do alunoS
-        void info_aluno(int ra);
-
 
 };

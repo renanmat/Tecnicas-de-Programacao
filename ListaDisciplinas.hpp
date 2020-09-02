@@ -1,36 +1,26 @@
 #pragma once
 
-#include "ElDisciplina.hpp"
+#include "Lista.hpp"
 
+class Disciplina;
 
 class ListaDisciplinas
 {
-    private:
-        char nome[100];
-        ElDisciplina* pElDiscPrim;
-        ElDisciplina* pElDiscAtual;
-        int numero_disciplinas;
-        int cont;
-        int id;
+    protected:
+        Lista<Disciplina> LTDisciplinas;
+        int numeroDisc;
+        int contDisc;
     
     public:
-        ListaDisciplinas(int nd = 200, const char* n = "");
+        ListaDisciplinas(int nd = -1);
         ~ListaDisciplinas();
 
-        void set_nome(const char* n);
+        void inclua_disciplina(Disciplina* pd);
 
-        //agrega as disciplinas ao departamento
-        //atraves de lista escadeada
-        void inclui_disciplina(Disciplina* pd);
-        //Os elementos sao listados do primeiro ate o ultimo
         void liste_disciplinas();
-        //Os elementos sao listados do ultimo ate o primeiro
         void liste_disciplinas2();
 
-        void set_id(int i);
-        int get_id();
-
-        void limpa_lista();
+        void limpar_lista();
 
         void grava_disciplinas(int tamanhoL);
         void recupera_disciplinas(int* contId);

@@ -138,8 +138,8 @@ void Principal::inicializa_disciplina()
     Metodos2_2007.inclui_aluno(&Daniel);
 
     //inserir notas e faltas de alunos
-    Metodos2_2007.set_notas(2189, 7.5, 8.0, 0, 7 );
-    Metodos2_2007.set_notas(1985, 9.45, 3.0, 10.0, 15);
+    // Metodos2_2007.set_notas(2189, 7.5, 8.0, 0, 7 );
+    // Metodos2_2007.set_notas(1985, 9.45, 3.0, 10.0, 15);
 
     //Cadastra disciplina na lista principal do sistema
     objMenu.cadastre_discp(&Computacao1_2006);
@@ -206,7 +206,7 @@ void Principal::liste_Discp_de_Depart()
     DAELN.liste_disciplinas();
     cout<<endl;
 
-    DAELN.liste_disciplinas2();
+    DAELN.liste_disciplinas();
     cout<<endl;
 }
 
@@ -220,13 +220,13 @@ void Principal::liste_alunos_de_disciplina()
     
 }
 
-void Principal::informe_notasAlunos()
-{
-    Metodos2_2007.info_aluno(1985);
-    cout<<endl;
-    Metodos2_2007.info_aluno(2189);
-    cout<<endl;
-}
+// void Principal::informe_notasAlunos()
+// {
+//     Metodos2_2007.info_aluno(1985);
+//     cout<<endl;
+//     Metodos2_2007.info_aluno(2189);
+//     cout<<endl;
+// }
 
 void Principal::executar()
  {

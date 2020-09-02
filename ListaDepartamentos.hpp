@@ -1,34 +1,25 @@
 #pragma once
 
-#include "ElDepartamento.hpp"
+#include "Departamento.hpp"
+#include "Lista.hpp"
 
 class ListaDepartamentos
 {
-    private:
-        char nome[150];
-        ElDepartamento* pElDepPrim;
-        ElDepartamento* pElDepAtual;
-        int numero_depart;
-        int cont;
-        int id;
-    
+    protected:
+        Lista<Departamento> LTDepart;
+        int numeroDepart;
+        int contDP;
+
     public:
-        ListaDepartamentos(int nd = -1, const char* n = "");
+        ListaDepartamentos(int nD = -1);
         ~ListaDepartamentos();
 
-        void set_nome(const char* n); 
-
-        void inclui_depart(Departamento* pd);
+        void inclua_depart(Departamento* pd);
+        
         void liste_depart();
         void liste_depart2();
 
         Departamento* localiza_depart(const char* n);
 
-        void set_id(int i);
-        int get_id();
-
-        void limpa_lista();
-
-        void grava_departamentos(int tamanhoList);
-        void recuperar_departamentos(int* cont);
+        void limpar_lista();
 };

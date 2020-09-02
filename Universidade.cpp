@@ -3,7 +3,7 @@
  
  Universidade::Universidade(int i,int nd, const char *nome_uni):
  id(i), // set um id a universidade
- objListDepart(nd, nome_uni)//passa para lista o numero de departamentos e o nome da universidade
+ objListDepart(nd)//passa para lista o numero de departamentos e o nome da universidade
  {
      strcpy(nome, nome_uni);
  }
@@ -24,7 +24,6 @@ int Universidade::get_id()
 void Universidade::setNome(const char *nome_uni)
 {
     strcpy(nome,nome_uni);
-    objListDepart.set_nome(nome_uni);
 }
 
 char* Universidade::getNome()
@@ -35,15 +34,17 @@ char* Universidade::getNome()
 
 void Universidade::inclui_depart(Departamento* pDepart)
 {
-    objListDepart.inclui_depart(pDepart);
+    objListDepart.inclua_depart(pDepart);
 }
         
 void Universidade::liste_departamentos()
 {
+    cout<<"-="<<nome<<"-="<<endl;
     objListDepart.liste_depart();
 }
 
 void Universidade::liste_departamentos2()
 {
+    cout<<"-="<<nome<<"-="<<endl;
     objListDepart.liste_depart2();
 }

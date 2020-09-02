@@ -1,30 +1,24 @@
 #pragma once
 
-#include "ElUniversidade.hpp"
+#include "Lista.hpp"
+
+class Universidade;
 
 class ListaUniversidades
 {
-    private:
-        ElUniversidade* pElUnivPrim;
-        ElUniversidade* pElUnivAtual;
-
-        int id;
+    protected:
+        Lista<Universidade> LTUniver;
 
     public:
         ListaUniversidades();
         ~ListaUniversidades();
 
-        void inclui_univ(Universidade* pu);
+        void inclui_univ(Universidade* pU);
+
         void liste_univ();
         void liste_univ2();
 
         Universidade* localiza_universidade(const char* nUniv);
 
-        void set_id(int i);
-        int get_id();
-
-        void limpa_lista();
-
-        void gravar_universidades(int tamList);
-        void recuperar_universidades(int* cont);
+        void limpar_lista();
 };

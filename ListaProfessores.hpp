@@ -1,25 +1,23 @@
 #pragma once
 
-#include "ElProfessor.hpp"
+#include "Professor.hpp"
+#include "Lista.hpp"
 
 class ListaProfessores
 {
-    private:
-        char nome[150];
-        ElProfessor* pElProfPrim;
-        ElProfessor* pElProfAtual;
+    protected:
+        Lista<Professor> LTProf;
+        int numeroProf;
+        int contProf;
 
     public:
-        ListaProfessores(const char* n = "");
+        ListaProfessores(int nP = -1);
         ~ListaProfessores();
 
-        void inclui_professor(Professor* p);
+        void inclua_professor(Professor* pP);
 
         void liste_professores();
         void liste_professores2();
 
         void limpar_lista();
-
-        void gravar_professores(int tamanhoL);
-        void recuperar_professores(int* contId);
 };

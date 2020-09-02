@@ -53,7 +53,7 @@ void Menu::cadastre_depart(Departamento* pd)
 {
     if(pd != nullptr)
     {
-        objLDepart.inclui_depart(pd);
+        objLDepart.inclua_depart(pd);
         cont_idDepart++;
     }
     else
@@ -79,7 +79,7 @@ void Menu::cadastre_depart(Departamento* pd)
            pDep->setNome(nomeDep.c_str());
            pDep->set_univerAssocida(pUniv);
 
-           objLDepart.inclui_depart(pDep);
+           objLDepart.inclua_depart(pDep);
            cout<<"Departamento cadastrado!!"<<endl;
            
        }
@@ -95,7 +95,7 @@ void Menu::cadastre_discp(Disciplina* pd)
 {
     if(pd != nullptr)
     {
-        objLDiscip.inclui_disciplina(pd);
+        objLDiscip.inclua_disciplina(pd);
         cont_idDiscip++;
     }
     else
@@ -120,7 +120,7 @@ void Menu::cadastre_discp(Disciplina* pd)
             pDisc->set_departAssociado(pDepart);
             pDisc->set_id(cont_idDiscip++);//// 'cont_idDiscip++' o contador de id recebe +1 a cada nova disciplina cadastrada
 
-            objLDiscip.inclui_disciplina(pDisc);
+            objLDiscip.inclua_disciplina(pDisc);
 
             cout<<"Disciplina cadastrada!"<<endl;
         }
@@ -136,7 +136,7 @@ void Menu::cadastre_alunos(Aluno* pA)
 {
     if(pA != nullptr)
     {
-        objLAluno.inclui_aluno(pA);
+        objLAluno.inclua_aluno(pA);
         cont_idAluno++;
     }
     else
@@ -155,7 +155,7 @@ void Menu::cadastre_alunos(Aluno* pA)
         pA = new Aluno(cont_idAluno++); // cria aluno e isere o id
         pA->set_nome(nomeA.c_str());
 
-        objLAluno.inclui_aluno(pA);
+        objLAluno.inclua_aluno(pA);
 
         cout<<"Aluno cadastrado"<<endl;
         getchar();
@@ -168,7 +168,7 @@ void Menu::cadastre_professor(Professor* pP)
 {
     if(pP != nullptr)
     {
-        objLProfesores.inclui_professor(pP);
+        objLProfesores.inclua_professor(pP);
         cont_idProf++;
     }
     else
@@ -183,7 +183,7 @@ void Menu::cadastre_professor(Professor* pP)
         pP = new Professor(cont_idProf++);// cria professor e isere o id
         pP->set_nome(nomeP.c_str());
 
-        objLProfesores.inclui_professor(pP);
+        objLProfesores.inclua_professor(pP);
 
         cout<<"Professor cadastrado!"<<endl;
     }

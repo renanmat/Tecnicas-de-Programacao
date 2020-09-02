@@ -1,8 +1,10 @@
 #pragma once
 
-#include "ListaUniversidades.hpp"
-#include "ListaAlunos.hpp"
-#include "ListaProfessores.hpp"
+#include "ListaUnivGravadora.hpp"
+#include "ListaDepartGravadora.hpp"
+#include "ListaDisciplinasGravadora.hpp"
+#include "ListaAlunosGravadora.hpp"
+#include "ListaProfessoresGravadora.hpp"
 
 class Menu
 {
@@ -13,11 +15,11 @@ class Menu
         int cont_idAluno;
         int cont_idProf;
 
-        ListaUniversidades objLUniver;
-        ListaDepartamentos objLDepart;
-        ListaDisciplinas objLDiscip;
-        ListaAlunos objLAluno;
-        ListaProfessores objLProfesores;
+        ListaUnivGravadora objLUniver;
+        ListaDepartGravadora objLDepart;
+        ListaDisciplinasGravadora objLDiscip;
+        ListaAlunosGravadora objLAluno;
+        ListaProfessoresGravadora objLProfesores;
     
     public:
         Menu();

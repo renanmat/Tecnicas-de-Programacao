@@ -7,7 +7,7 @@ using std::cout;
 using std::endl;
 
  Departamento::Departamento(const char* pNome, int i):
- objLDisciplinas(-1,pNome)
+ objLDisciplinas(-1)
  {
     id = i;
     strcpy(nome,pNome);
@@ -53,17 +53,19 @@ void Departamento::set_univerAssocida(Universidade* pUni)
 //Metodos da Lista encadiada
 void Departamento::inclui_disciplina(Disciplina* pd)
 {
-    objLDisciplinas.inclui_disciplina(pd);
+    objLDisciplinas.inclua_disciplina(pd);
 }
 
 
 void Departamento::liste_disciplinas()
 {
+    cout<<"-="<<nome<<"=-"<<endl;
     objLDisciplinas.liste_disciplinas();
 }
 
 
 void Departamento::liste_disciplinas2()
 {
+    cout<<"-="<<nome<<"=-"<<endl;
     objLDisciplinas.liste_disciplinas2();
 }

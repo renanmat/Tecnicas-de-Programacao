@@ -8,12 +8,11 @@ using std::endl;
 
 Disciplina::Disciplina(int i, int numAlunos, const char* n):
 id{i},
-objLAlunos(numAlunos, n)
+objLAlunos(numAlunos)
 {
     strcpy(area_conhecimento, "");
     strcpy(nome, n);
     pDepartAssociado = nullptr;
-
 }
 
 Disciplina::~Disciplina()
@@ -24,7 +23,7 @@ Disciplina::~Disciplina()
 void Disciplina::set_nome(const char* n)
 { 
     strcpy(nome, n); 
-    objLAlunos.set_nome(n);
+
 }
 
 void Disciplina::set_id(int i){ id = i; }
@@ -55,25 +54,17 @@ Departamento* Disciplina::get_departAssociado(){ return pDepartAssociado; }
 //Metodos da lista encadiada de Alunos
 void Disciplina::inclui_aluno(Aluno* pa)
 {
-    objLAlunos.inclui_aluno(pa);
+    objLAlunos.inclua_aluno(pa);
 }
 
 void Disciplina::liste_alunos()
 {
+    cout<<"-="<<nome<<"=-"<<endl;
     objLAlunos.liste_alunos();
 }
 
 void Disciplina::liste_alunos2()
 {
+    cout<<"-="<<nome<<"=-"<<endl;
     objLAlunos.liste_alunos2();
-}
-
-void Disciplina::set_notas(int ra, double n1, double n2, double f, int nFalt)
-{
-    objLAlunos.set_notas(ra, n1, n2, f, nFalt);
-}
-
-void Disciplina::info_aluno(int ra)
-{
-    objLAlunos.info_aluno(ra);   
 }

@@ -60,7 +60,7 @@ class Principal
         void liste_DepartsUniver();
         void liste_Discp_de_Depart();
         void liste_alunos_de_disciplina();
-        void informe_notasAlunos();
+        // void informe_notasAlunos();
         void liste_univs();
 
         void executar(); 
