@@ -29,6 +29,10 @@ Principal::Principal():
     Computacao2_2007(1),
     Introd_alg_2007(2),
     Metodos2_2007(3),
+
+    //Estagiario
+    Marcos(),
+    Lucas(),
     
     //Menu
     objMenu()
@@ -61,6 +65,7 @@ void Principal::inicializa()
     inicializa_departamento();
     inicializa_disciplina();
     inicializa_aluno();
+    inicializa_estagiario();
 }
 
 void Principal::inicializa_professor()
@@ -74,12 +79,35 @@ void Principal::inicializa_professor()
     Einstein.setDepartamento(&Fisica);
 
     //isere id
-    Newton.set_id(0);
-    Einstein.set_id(1);
+    Newton.Pessoa::set_id(0);
+    Einstein.Pessoa::set_id(1);
+
+    //inserir o conhecimento que o prof domina
+    Newton.set_dominio("Matematica");
+    Einstein.set_dominio("Fisica");
+
+
+    //inserindo salario e bolsa projeto
+    Newton.set_salario(25000);
+    Newton.set_bolsaProjeto(2000);
+
+    Einstein.set_salario(50000);
 
     //cadastra professor na lista principal
     objMenu.cadastre_professor(&Newton);
     objMenu.cadastre_professor(&Einstein);
+
+    //cadastrar professores na lista de pessoas
+    Professor* pProfessor = nullptr;
+    Pessoa* pPessoa = nullptr;
+
+    pProfessor = &Newton;
+    pPessoa = static_cast<Pessoa*>(pProfessor);//'static_cast' verifica se a conversao é valida
+    objMenu.cadastre_pessoa(pPessoa);
+
+    pProfessor = &Einstein;
+    pPessoa = static_cast<Pessoa*>(pProfessor);//'static_cast' verifica se a conversao é valida
+    objMenu.cadastre_pessoa(pPessoa);
 
 }
 
@@ -156,11 +184,58 @@ void Principal::inicializa_aluno()
     Daniel.set_id(2);
     Ana.set_id(3);
 
-    //adiciona na lista principal
+    //adiciona na lista principal de alunos
     objMenu.cadastre_alunos(&Renan);
     objMenu.cadastre_alunos(&Matheus);
     objMenu.cadastre_alunos(&Daniel);
     objMenu.cadastre_alunos(&Ana);
+
+    //cadastrando alunos na lista pessoas
+    Pessoa* pPessoa = nullptr;
+    Aluno* pAluno = nullptr;
+    //metodo para fazer cast mais seguro(ha uma verificacao) de aluno para pessoa
+    pAluno = &Renan;
+    pPessoa = static_cast<Pessoa*>(pAluno);
+    objMenu.cadastre_pessoa(pPessoa);
+
+    pAluno = &Matheus;
+    pPessoa = static_cast<Pessoa*>(pAluno);
+    objMenu.cadastre_pessoa(pPessoa);
+
+    pAluno = &Daniel;
+    pPessoa = static_cast<Pessoa*>(pAluno);
+    objMenu.cadastre_pessoa(pPessoa);
+
+    pAluno = &Ana;
+    pPessoa = static_cast<Pessoa*>(pAluno);
+    objMenu.cadastre_pessoa(pPessoa);
+
+}
+
+void Principal::inicializa_estagiario()
+{
+    Estagiario* pEstagiario = nullptr;
+    Aluno* pAluno = nullptr;
+    Pessoa* pPessoa = nullptr;
+
+    //***********************
+    Marcos.set_nome("Marcos");
+    Marcos.set_bolsaEstudo(800);
+    pEstagiario = &Marcos;//pegando o endereço da variavel
+    pAluno = static_cast<Aluno*>(pEstagiario);//vazendo cast de estagiario para aluno
+    objMenu.cadastre_alunos(pAluno);//cadastrando na lista de alunos
+    pPessoa = static_cast<Pessoa*>(pEstagiario);//vazendo cast de estagiario para pessoa
+    objMenu.cadastre_pessoa(pPessoa);//cadastrando na lista de pessoas
+
+    //************************
+    Lucas.set_nome("Lucas");
+    Lucas.set_bolsaEstudo(600);
+    pEstagiario = &Lucas;
+    pAluno = static_cast<Aluno*>(pEstagiario);
+    objMenu.cadastre_alunos(pAluno);
+    pPessoa = static_cast<Pessoa*>(pEstagiario);
+    objMenu.cadastre_pessoa(pPessoa);
+
 }
 
 //# # # # # # Executar # # # # # #

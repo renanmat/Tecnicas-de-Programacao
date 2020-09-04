@@ -17,7 +17,7 @@ class Pessoa{
     public:
         Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
         Pessoa(int i = -1);
-        ~Pessoa();
+        virtual ~Pessoa();
         void inicializa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
 
         void set_nome(const char* n);
@@ -31,6 +31,7 @@ class Pessoa{
         void calc_imprime_idade(int diaAt, int mesAt, int ano_atual);
         int getIdade();
 
+        virtual void informa_proventos();
 
 };
 

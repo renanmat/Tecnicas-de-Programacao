@@ -18,6 +18,7 @@ class ListaProfessores
 
         void liste_professores();
         void liste_professores2();
+        void liste_conhecimento();
 
         void limpar_lista();
 };

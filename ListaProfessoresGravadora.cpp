@@ -59,7 +59,7 @@ void ListaProfessoresGravadora::gravar_professores(int tamanhoL)
         pP = pEl->get_info();
 
         grava_stringProf(pP->get_nome(), &gravador_prof); // grava o nome do professor
-        int i = pP->get_id();
+        int i = pP->Pessoa::get_id();
         gravador_prof.write((char*)&i, sizeof(i)); // grava o id do professor
         
         pEl = pEl->get_prox();
@@ -99,7 +99,7 @@ void ListaProfessoresGravadora::recuperar_professores(int* contId)
         recuperador_prof.read((char*)&i, sizeof(i));// recupera id do professor
 
         pP = new Professor();
-        pP->set_id(i);
+        pP->Pessoa::set_id(i);
         pP->set_nome(nomeP.c_str());
 
         inclua_professor(pP);

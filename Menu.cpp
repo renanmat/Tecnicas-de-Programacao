@@ -17,10 +17,11 @@ Menu::Menu():
  objLDepart(),
  objLDiscip(),
  objLAluno(),
- objLProfesores()
+ objLProfesores(),
+ objLPessoas()
  {
  }
- 
+
 Menu::~Menu()
 {
 }
@@ -190,6 +191,19 @@ void Menu::cadastre_professor(Professor* pP)
     
 }
 
+void Menu::cadastre_pessoa(Pessoa* p)
+{
+    if(p != nullptr)
+    {
+        objLPessoas.inclua_pessoa(p);
+    }
+    else
+    {
+        cout<<"Nao deu para cadastrar essa pessoa!!"<<endl;
+    }
+    
+}
+
 void Menu::gravar_todos()
 {
     objLUniver.gravar_universidades(cont_idUniver);
@@ -268,6 +282,9 @@ void Menu::menu_exe()
         cout<<"3 -   Liste Disciplina"<<endl;
         cout<<"4 -   Liste Alunos"<<endl;
         cout<<"5 -   Liste Professores"<<endl;
+        cout<<"6 -   Liste Pessoas"<<endl;
+        cout<<"7 -   Liste Proventos"<<endl;
+        cout<<"8 -   Liste Conhecimento dos Professores"<<endl;
         cout<<"9 -   Sair"<<endl;
         
         cin>>op;
@@ -298,7 +315,22 @@ void Menu::menu_exe()
                 objLProfesores.liste_professores();
                 cin.ignore();
                 getchar();
-                break;    
+                break; 
+            case 6:
+                objLPessoas.liste_pessoas();
+                cin.ignore();
+                getchar();
+                break;
+            case 7:
+                objLPessoas.liste_proventos();
+                cin.ignore();
+                getchar();
+                break;     
+            case 8:
+                objLProfesores.liste_conhecimento();
+                cin.ignore();
+                getchar();
+                break;         
             case 9:
                 break;
             default:

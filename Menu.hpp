@@ -5,6 +5,8 @@
 #include "ListaDisciplinasGravadora.hpp"
 #include "ListaAlunosGravadora.hpp"
 #include "ListaProfessoresGravadora.hpp"
+#include "ListaPessoas.hpp"
+#include "Estagiario.hpp"
 
 class Menu
 {
@@ -20,6 +22,7 @@ class Menu
         ListaDisciplinasGravadora objLDiscip;
         ListaAlunosGravadora objLAluno;
         ListaProfessoresGravadora objLProfesores;
+        ListaPessoas objLPessoas;
     
     public:
         Menu();
@@ -30,6 +33,7 @@ class Menu
         void cadastre_discp(Disciplina* pd = nullptr);
         void cadastre_alunos(Aluno* pA = nullptr);
         void cadastre_professor(Professor* pP = nullptr);
+        void cadastre_pessoa(Pessoa* p = nullptr);
 
         void gravar_todos();
         void recuperar_todos();

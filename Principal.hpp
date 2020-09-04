@@ -37,6 +37,10 @@ class Principal
         Disciplina Introd_alg_2007;
         Disciplina Metodos2_2007;
 
+        //Estagiario
+        Estagiario Marcos;
+        Estagiario Lucas;
+
         Menu objMenu;
         
         //Dia, mes e ano atuais(data informada pelo sistema)
@@ -52,6 +56,7 @@ class Principal
         void inicializa_departamento();
         void inicializa_disciplina();
         void inicializa_aluno();
+        void inicializa_estagiario();
 
         void infor_idadeProf();
         void infor_idadeAluno();

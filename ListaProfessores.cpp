@@ -82,6 +82,29 @@ void ListaProfessores::liste_professores2()
     } 
 }
 
+void ListaProfessores::liste_conhecimento()
+{
+    Elemento<Professor>* pAux = LTProf.get_primeiro();
+    if(pAux != nullptr)
+    {
+        Professor* pP = nullptr;
+
+        while(pAux)
+        {
+            pP = pAux->get_info();
+
+            cout<<"Prof. "<<pP->get_nome()<<" tem o dominio em "<<pP->get_dominio()<<"."<<endl;
+
+            pAux = pAux->get_prox();
+        }
+    }
+    else
+    {
+        cout<<"Lista de professores esta vazia!!"<<endl;
+    }
+    
+}
+
 void ListaProfessores::limpar_lista()
 {
     LTProf.limpar();

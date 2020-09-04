@@ -60,3 +60,8 @@ int Pessoa::getIdade()
 {
     return idade;
 }
+
+void Pessoa::informa_proventos()
+{
+    cout<<"Nenhuma informacao sobre proventos para "<<nome<<"."<<endl;
+}
