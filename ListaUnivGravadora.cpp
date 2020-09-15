@@ -50,7 +50,7 @@ void ListaUnivGravadora::gravar_universidades(int tamanhoL)
 
     gravadoraUniv.write((char*)&tamanhoL, sizeof(tamanhoL)); // gravando o tamanho(numero de elementos) da lista
 
-    Elemento<Universidade>* pAux = LTUniver.get_primeiro();
+    Lista<Universidade>::Elemento* pAux = LTUniver.get_primeiro();
     Universidade* pU = nullptr;
     while(pAux != nullptr)
     {

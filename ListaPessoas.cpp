@@ -26,7 +26,7 @@ void ListaPessoas::inclua_pessoa(Pessoa* p)
 
 void ListaPessoas::liste_pessoas()
 {
-    Elemento<Pessoa>* pAux = LTPessoas.get_primeiro();
+    Lista<Pessoa>::Elemento* pAux = LTPessoas.get_primeiro();
 
     if(pAux != nullptr)
     {
@@ -54,7 +54,7 @@ void ListaPessoas::limpar_lista()
 
 void ListaPessoas::liste_proventos()
 {
-    Elemento<Pessoa>* pAux = LTPessoas.get_primeiro();
+    Lista<Pessoa>::Elemento* pAux = LTPessoas.get_primeiro();
     if(pAux != nullptr)
     {
         Pessoa* pP = nullptr;

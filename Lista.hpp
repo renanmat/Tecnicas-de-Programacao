@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Elemento.hpp"
 #include "string.h"
 #include <iostream>
 using std::cout;
@@ -10,9 +9,41 @@ using std::endl;
 template<class TIPO>
 class Lista
 {
+    // private:
+    //     Elemento* pPrimeiro;
+    //     Elemento* pAtual;
+
+    public:
+        class Elemento
+        {
+            private:
+                Elemento* pProximo;
+                Elemento* pAnterior;
+                TIPO* pInfo;
+
+            public:
+                Elemento()
+                {
+                    pProximo = pAnterior = nullptr;
+                    pInfo = nullptr;
+                }
+                ~Elemento()
+                {
+                    pProximo = pAnterior = nullptr;
+                    pInfo = nullptr;
+                }
+                void set_prox(Elemento* pE){pProximo = pE;}
+                Elemento* get_prox(){return pProximo;}
+                void set_ant(Elemento* pE){pAnterior = pE;}
+                Elemento* get_ant(){return pAnterior;}
+                void set_info(TIPO* pI){pInfo = pI;}
+                TIPO* get_info(){return pInfo;}
+        };
+
     private:
-        Elemento<TIPO>* pPrimeiro;
-        Elemento<TIPO>* pAtual;    
+        Elemento* pPrimeiro;
+        Elemento* pAtual; 
+
     public:
 
         Lista();
@@ -22,11 +53,12 @@ class Lista
         
         void limpar();
 
-        bool inclua_elemento(Elemento<TIPO>* pE);
+        bool inclua_elemento(Elemento* pE);
         bool inclua_info(TIPO* pI);
 
-        Elemento<TIPO>* get_primeiro();
-        Elemento<TIPO>* get_atual();
+        Elemento* get_primeiro(){return pPrimeiro;}
+        Elemento* get_atual(){return pAtual;}
+    
 
 };
 
@@ -52,7 +84,7 @@ template<class TIPO>
 void Lista<TIPO>::limpar()
 {
      // Limpa lista
-    Elemento<TIPO>* pAux = pPrimeiro;
+    Elemento* pAux = pPrimeiro;
     while(pPrimeiro != nullptr)
     {
         pPrimeiro = pAux->get_prox();
@@ -65,7 +97,7 @@ void Lista<TIPO>::limpar()
 
 
 template<class TIPO>
-bool Lista<TIPO>::inclua_elemento(Elemento<TIPO>* pE)
+bool Lista<TIPO>::inclua_elemento(Elemento* pE)
 {
     if(pE != nullptr)
     {
@@ -92,7 +124,7 @@ bool Lista<TIPO>::inclua_info(TIPO* pI)
 {
     if(pI != nullptr)
     {
-        Elemento<TIPO>* pEAux = new Elemento<TIPO>;
+        Elemento* pEAux = new Elemento();
         pEAux->set_info(pI);
 
         inclua_elemento(pEAux);
@@ -102,13 +134,13 @@ bool Lista<TIPO>::inclua_info(TIPO* pI)
     return false;
 }
 
-template<class TIPO>
-Elemento<TIPO>* Lista<TIPO>::get_primeiro()
-{
-    return pPrimeiro;
-}
-template<class TIPO>
-Elemento<TIPO>* Lista<TIPO>::get_atual()
-{
-    return pAtual;
-}
+// template<class TIPO>
+// Elemento* Lista<TIPO>::get_primeiro()
+// {
+//     return pPrimeiro;
+// }
+// template<class TIPO>
+// Lista<TIPO>::Elemento* Lista<TIPO>::get_atual()
+// {
+//     return pAtual;
+// }

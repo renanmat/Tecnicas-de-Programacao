@@ -13,6 +13,7 @@ class Pessoa{
         int idade;
         char nome[150];
         int id;
+        static int contObj;
 
     public:
         Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep = "");
@@ -33,5 +34,6 @@ class Pessoa{
 
         virtual void informa_proventos();
 
+        static int get_contObj();//funcao static
 };
 

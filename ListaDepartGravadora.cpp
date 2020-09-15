@@ -50,7 +50,7 @@ void ListaDepartGravadora::grava_departamentos(int tamanhoList)
 
     gravadorDep.write((char*)&tamanhoList,sizeof(tamanhoList));//gravando a quantidade de itens da lista
 
-    Elemento<Departamento>* pAux = LTDepart.get_primeiro();
+    Lista<Departamento>::Elemento* pAux = LTDepart.get_primeiro();
     Departamento* pD = nullptr;
     int idDep = 0;
     while(pAux != nullptr)

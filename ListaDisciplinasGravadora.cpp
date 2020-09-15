@@ -51,7 +51,7 @@ void ListaDisciplinasGravadora::grava_disciplinas(int tamanhoL)
 
     gravador_disciplina.write((char*)&tamanhoL, sizeof(tamanhoL));//gravando tamanho da lista
 
-    Elemento<Disciplina>* pElD = LTDisciplinas.get_primeiro();
+    Lista<Disciplina>::Elemento* pElD = LTDisciplinas.get_primeiro();
     Disciplina* pD= nullptr;
 
     //percore lista de disciplina

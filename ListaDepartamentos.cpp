@@ -61,7 +61,7 @@ void ListaDepartamentos::inclua_depart(Departamento* pd)
 
 void ListaDepartamentos::liste_depart()
 {
-    Elemento<Departamento>* pAux = LTDepart.get_primeiro();
+    Lista<Departamento>::Elemento* pAux = LTDepart.get_primeiro();
     Departamento* pD = nullptr;
 
     if(pAux != nullptr)
@@ -84,7 +84,7 @@ void ListaDepartamentos::liste_depart()
 
 void ListaDepartamentos::liste_depart2()
 {
-    Elemento<Departamento>* pAux = LTDepart.get_atual();
+    Lista<Departamento>::Elemento* pAux = LTDepart.get_atual();
     Departamento* pD = nullptr;
 
     if(pAux != nullptr)
@@ -106,7 +106,7 @@ void ListaDepartamentos::liste_depart2()
 
 Departamento* ListaDepartamentos::localiza_depart(const char* n)
 {
-    Elemento<Departamento>* pAux = LTDepart.get_primeiro();
+    Lista<Departamento>::Elemento* pAux = LTDepart.get_primeiro();
     Departamento* pD = nullptr;
     while(pAux)
     {

@@ -38,7 +38,7 @@ void ListaAlunos::inclua_aluno(Aluno* pa)
 void ListaAlunos::liste_alunos()
 {
     //pAux recebe o primeiro elemento da lista
-    Elemento<Aluno>* pAux = LTAlunos.get_primeiro();
+    Lista<Aluno>::Elemento* pAux = LTAlunos.get_primeiro();
 
     if(pAux != nullptr)
     {
@@ -65,7 +65,7 @@ void ListaAlunos::liste_alunos()
 void ListaAlunos::liste_alunos2()
 {
     //pAux recebe o ultimo elemento da lista
-    Elemento<Aluno>* pAux = LTAlunos.get_atual();
+    Lista<Aluno>::Elemento* pAux = LTAlunos.get_atual();
 
     if(pAux != nullptr)
     {

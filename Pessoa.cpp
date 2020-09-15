@@ -1,20 +1,27 @@
 #include "Pessoa.hpp"
 
+int Pessoa::contObj = 0;
+int Pessoa::get_contObj(){return contObj;}
+
 Pessoa::Pessoa(int diaNas, int mesNas, int anoNas, const char *nomep)  
 {
     id = - 1;
     inicializa(diaNas,mesNas,anoNas, nomep);
+
+    contObj++;
 }
 
 Pessoa::Pessoa(int i):
 id{i}
 {
     inicializa(0,0,0);
+    contObj++;
 }
 
 Pessoa::~Pessoa()
 {
     inicializa(0,0,0);
+    contObj--;
 }
 
 void Pessoa::inicializa(int diaNas, int mesNas, int anoNas, const char *nomep)

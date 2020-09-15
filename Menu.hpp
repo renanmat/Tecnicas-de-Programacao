@@ -42,5 +42,6 @@ class Menu
         void menu_exe();
         void menu_grav();
         void menu_recup();
+        void menu_info();
         void menu_principal();
 };

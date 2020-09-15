@@ -52,7 +52,7 @@ void ListaProfessoresGravadora::gravar_professores(int tamanhoL)
     gravador_prof.write((char*)&tamanhoL, sizeof(tamanhoL));// gravando o tamanho da lista
 
     Professor* pP = nullptr;
-    Elemento<Professor>* pEl = LTProf.get_primeiro();
+    Lista<Professor>::Elemento* pEl = LTProf.get_primeiro();
     //percore a lista de professores
     while(pEl != nullptr)
     {

@@ -50,7 +50,7 @@ void ListaAlunosGravadora::gravar_alunos(int tamanhoL)
 
     gravadorAluno.write((char*)&tamanhoL, sizeof(tamanhoL));//gravando o tamanho da lista
 
-    Elemento<Aluno>* pElA = LTAlunos.get_primeiro();
+    Lista<Aluno>::Elemento* pElA = LTAlunos.get_primeiro();
     Aluno* pA = nullptr;
     //percore a lista
     while(pElA != nullptr)

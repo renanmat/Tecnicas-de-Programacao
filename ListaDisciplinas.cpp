@@ -34,7 +34,7 @@ void ListaDisciplinas::inclua_disciplina(Disciplina* pd)
 
 void ListaDisciplinas::liste_disciplinas()
 {
-    Elemento<Disciplina>* pAux = LTDisciplinas.get_primeiro();
+    Lista<Disciplina>::Elemento* pAux = LTDisciplinas.get_primeiro();
 
     if(pAux != nullptr)
     {
@@ -57,7 +57,7 @@ void ListaDisciplinas::liste_disciplinas()
 
 void ListaDisciplinas::liste_disciplinas2()
 {
-    Elemento<Disciplina>* pAux = LTDisciplinas.get_atual();
+    Lista<Disciplina>::Elemento* pAux = LTDisciplinas.get_atual();
 
     if(pAux != nullptr)
     {

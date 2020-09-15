@@ -158,6 +158,9 @@ void Menu::cadastre_alunos(Aluno* pA)
 
         objLAluno.inclua_aluno(pA);
 
+        Pessoa* pPessoa = static_cast<Pessoa*>(pA);//'static_cast' faz uma verificaçao na hora da compilacao
+        cadastre_pessoa(pPessoa);//cadastrando aluno na lista pessoa
+
         cout<<"Aluno cadastrado"<<endl;
         getchar();
 
@@ -186,6 +189,10 @@ void Menu::cadastre_professor(Professor* pP)
 
         objLProfesores.inclua_professor(pP);
 
+        
+        Pessoa* pPessoa = static_cast<Pessoa*>(pP);//'static_cast' faz uma verificaçao na compilaçao
+        cadastre_pessoa(pPessoa);//cadastrando professor na lista de pessoas
+
         cout<<"Professor cadastrado!"<<endl;
     }
     
@@ -199,7 +206,7 @@ void Menu::cadastre_pessoa(Pessoa* p)
     }
     else
     {
-        cout<<"Nao deu para cadastrar essa pessoa!!"<<endl;
+        cout<<"Nao foi possivel cadastrar pessoa!!\nPonteiro nulo!!"<<endl;
     }
     
 }
@@ -283,8 +290,6 @@ void Menu::menu_exe()
         cout<<"4 -   Liste Alunos"<<endl;
         cout<<"5 -   Liste Professores"<<endl;
         cout<<"6 -   Liste Pessoas"<<endl;
-        cout<<"7 -   Liste Proventos"<<endl;
-        cout<<"8 -   Liste Conhecimento dos Professores"<<endl;
         cout<<"9 -   Sair"<<endl;
         
         cin>>op;
@@ -320,17 +325,7 @@ void Menu::menu_exe()
                 objLPessoas.liste_pessoas();
                 cin.ignore();
                 getchar();
-                break;
-            case 7:
-                objLPessoas.liste_proventos();
-                cin.ignore();
-                getchar();
-                break;     
-            case 8:
-                objLProfesores.liste_conhecimento();
-                cin.ignore();
-                getchar();
-                break;         
+                break;       
             case 9:
                 break;
             default:
@@ -449,6 +444,49 @@ void Menu::menu_recup()
     }
 }
 
+void Menu::menu_info()
+{
+    int op = -1;
+    
+    while(op != 9)
+    {
+        system("clear");
+        cout<<"####### Menu de Informaçoes #######"<<endl;
+        cout<<"1 -   Proventos das pessoa"<<endl;
+        cout<<"2 -   Conhecimento dos Professores"<<endl;
+        cout<<"3 -   Quantidade de pessoas"<<endl;
+        cout<<"9 -   Sair"<<endl;
+        
+        cin>>op;
+
+        switch(op)
+        {
+            case 1:
+                objLPessoas.liste_proventos();
+                cin.ignore();
+                getchar();
+                break;
+            case 2:
+                objLProfesores.liste_conhecimento();
+                cin.ignore();
+                getchar();
+                break;
+            case 3:
+                cout<<"Quantidade de pessoas: "<<Pessoa::get_contObj()<<endl;
+                cin.ignore();
+                getchar();
+                break;
+            case 9:
+                break;
+            default:
+                cout<<"Opçao invalida!!"<<endl;
+                getchar();
+        }
+
+    }
+
+}
+
 void Menu::menu_principal()
 {
     int op = -1;
@@ -461,6 +499,7 @@ void Menu::menu_principal()
         cout<<"2 -   Listar"<<endl;
         cout<<"3 -   Gravar"<<endl;
         cout<<"4 -   Recuperar"<<endl;
+        cout<<"5     Informaçoes"<<endl;
         cout<<"9 -   Sair"<<endl;
         
         cin>>op;
@@ -479,6 +518,8 @@ void Menu::menu_principal()
             case 4:
                 menu_recup();
                 break;
+            case 5:
+                menu_info();
             case 9:
                 cout<<"Obrigado! volte sempre!"<<endl;
                 break;

@@ -38,7 +38,7 @@ void ListaProfessores::inclua_professor(Professor* pP)
 
 void ListaProfessores::liste_professores()
 {
-    Elemento<Professor>* pAux = LTProf.get_primeiro();
+    Lista<Professor>::Elemento* pAux = LTProf.get_primeiro();
 
     if(pAux != nullptr)
     {
@@ -60,7 +60,7 @@ void ListaProfessores::liste_professores()
 }
 void ListaProfessores::liste_professores2()
 {
-    Elemento<Professor>* pAux = LTProf.get_atual();
+    Lista<Professor>::Elemento* pAux = LTProf.get_atual();
 
     if(pAux != nullptr)
     {
@@ -84,7 +84,7 @@ void ListaProfessores::liste_professores2()
 
 void ListaProfessores::liste_conhecimento()
 {
-    Elemento<Professor>* pAux = LTProf.get_primeiro();
+    Lista<Professor>::Elemento* pAux = LTProf.get_primeiro();
     if(pAux != nullptr)
     {
         Professor* pP = nullptr;
