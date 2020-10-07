@@ -1,18 +1,20 @@
 #include "ListaUniversidades.hpp"
 #include "Universidade.hpp"
 
+
 ListaUniversidades::ListaUniversidades():
-LTUniver()
+LTUniver(),
+iteradorLUniv()
 {
 }
 ListaUniversidades::~ListaUniversidades()
 {
-    limpar_lista();
+   // limpar_lista();
 }
 
 void ListaUniversidades::inclui_univ(Universidade* pU)
 {
-    if(pU != nullptr) LTUniver.inclua_info(pU);
+    if(pU != nullptr) LTUniver.push_back(pU);
     else
     {
         cout<<"Ponteiro para universidade nulo!"<<endl;
@@ -22,44 +24,44 @@ void ListaUniversidades::inclui_univ(Universidade* pU)
 
 void ListaUniversidades::liste_univ()
 {
-    Lista<Universidade>::Elemento* pAux = LTUniver.get_primeiro();
-    Universidade* pU = nullptr;
+    iteradorLUniv = LTUniver.begin();//inte
 
-    if(pAux != nullptr)
+
+    if(LTUniver.empty())//testa se a lista esta vazia
     {
-        cout<<"Lista de Universidades:"<<endl;
-        while(pAux)
-        {
-            pU = pAux->get_info();
-            cout<<"- "<<pU->getNome()<<endl;
-            pAux = pAux->get_prox();
-        }
+        cout<<"Lista de universidades vazia!"<<endl;
     }
     else
     {
-        cout<<"Lista de universidades vazia!"<<endl;
+        cout<<"Lista de Universidades:"<<endl;
+        while(iteradorLUniv != LTUniver.end())
+        {
+            
+            Universidade* pU = *iteradorLUniv;
+            cout<<" - "<<pU->getNome()<<endl;
+            iteradorLUniv++;
+        }
+        
     }
     
 }
 
 void ListaUniversidades::liste_univ2()
 {
-    Lista<Universidade>::Elemento* pAux = LTUniver.get_atual();
-    Universidade* pU = nullptr;
 
-    if(pAux != nullptr)
+    if(LTUniver.begin() == LTUniver.end()) // verifica se a lista esta vazia
     {
-        cout<<"Lista de Universidades:"<<endl;
-        while(pAux)
-        {
-            pU = pAux->get_info();
-            cout<<"- "<<pU->getNome()<<endl;
-            pAux = pAux->get_ant();
-        }
+        cout<<"Lista de universidades vazia!"<<endl;
     }
     else
     {
-        cout<<"Lista de universidades vazia!"<<endl;
+        
+        cout<<"Lista de Universidades:"<<endl;
+        //mostra a lista de forma reversa
+        for(rIterador = LTUniver.rbegin();rIterador != LTUniver.rend();++rIterador)
+        {
+            cout<<" - "<<(*rIterador)->getNome()<<endl;
+        }   
     }
     
     
@@ -68,17 +70,16 @@ void ListaUniversidades::liste_univ2()
 
 Universidade* ListaUniversidades::localiza_universidade(const char* nUniv)
 {
-    Lista<Universidade>::Elemento* pAux = LTUniver.get_primeiro();
+    iteradorLUniv = LTUniver.begin();
     Universidade* pU = nullptr;
-    while(pAux)
+    while(iteradorLUniv != LTUniver.end())
     {
-        pU = pAux->get_info();
+        pU = *iteradorLUniv;
         if( 0 == strcmp(nUniv, pU->getNome() ) )
         {
             return pU;
         }
-
-        pAux = pAux->get_prox();
+        iteradorLUniv++;
     }
     
     return nullptr;
@@ -86,5 +87,14 @@ Universidade* ListaUniversidades::localiza_universidade(const char* nUniv)
 
 void ListaUniversidades::limpar_lista()
 {
-    LTUniver.limpar();
+    iteradorLUniv = LTUniver.begin(); //aponta para o inicio da lista
+
+
+    while(iteradorLUniv != LTUniver.end())
+    {   //se o objeto for alocado de forma dinamica ele é desalocado
+        if((*iteradorLUniv)->dynamic()) delete (*iteradorLUniv);
+        iteradorLUniv++;
+    }
+    
+    LTUniver.clear(); //limpa a lista
 }

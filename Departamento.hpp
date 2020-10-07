@@ -13,6 +13,7 @@ class Departamento
         char nome[100];
         Universidade* pUniversidade;
         ListaDisciplinas objLDisciplinas;
+        bool flag;
     
     public:
         Departamento(const char* pNome = "", int i = 0);
@@ -35,6 +36,10 @@ class Departamento
         void liste_disciplinas();
         //Os elementos sao listados do ultimo ate o primeiro
         void liste_disciplinas2();
+
+        //verifica se o objeto foi alocado dinamicamente
+        void set_dynamic(bool f);
+        bool dynamic();
 };
 
 #endif

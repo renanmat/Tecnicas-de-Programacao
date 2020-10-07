@@ -3,7 +3,8 @@
  
  Universidade::Universidade(int i,int nd, const char *nome_uni):
  id(i), // set um id a universidade
- objListDepart(nd)//passa para lista o numero de departamentos e o nome da universidade
+ objListDepart(nd),//passa para lista o numero de departamentos
+ flag(true)
  {
      strcpy(nome, nome_uni);
  }
@@ -47,4 +48,13 @@ void Universidade::liste_departamentos2()
 {
     cout<<"-="<<nome<<"-="<<endl;
     objListDepart.liste_depart2();
+}
+
+void Universidade::set_dynamic(bool f)
+{
+   flag = f;
+}
+bool Universidade::dynamic()
+{
+    return flag;
 }

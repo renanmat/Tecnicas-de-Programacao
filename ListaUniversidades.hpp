@@ -1,14 +1,16 @@
 #pragma once
 
-#include "Lista.hpp"
+//#include "Lista.hpp"
+#include <list> //templaite list da stl(biblioteca padrao de templaites) - list->utiliza lista encadiada
 
 class Universidade;
 
 class ListaUniversidades
 {
     protected:
-        Lista<Universidade> LTUniver;
-
+        std::list<Universidade*> LTUniver;
+        std::list<Universidade*>::iterator iteradorLUniv;
+        std::list<Universidade*>::reverse_iterator rIterador;
     public:
         ListaUniversidades();
         ~ListaUniversidades();

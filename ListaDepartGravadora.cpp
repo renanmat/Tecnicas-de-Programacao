@@ -50,12 +50,12 @@ void ListaDepartGravadora::grava_departamentos(int tamanhoList)
 
     gravadorDep.write((char*)&tamanhoList,sizeof(tamanhoList));//gravando a quantidade de itens da lista
 
-    Lista<Departamento>::Elemento* pAux = LTDepart.get_primeiro();
+    iteradorDep = LTDepart.begin();
     Departamento* pD = nullptr;
     int idDep = 0;
-    while(pAux != nullptr)
+    while(iteradorDep != LTDepart.end())//enquanto nao chega no final da lista
     {
-        pD = pAux->get_info();
+        pD = (*iteradorDep);//iterador retorna o ponteiro para Departamento
         
         string nomeDep(pD->getNome()); 
         gravar_stringDep(&gravadorDep, nomeDep);//grava o nome do departamento
@@ -63,7 +63,7 @@ void ListaDepartGravadora::grava_departamentos(int tamanhoList)
         idDep = pD->get_id();
         gravadorDep.write((char*)&idDep, sizeof(idDep));//grava o id do departamento
 
-        pAux = pAux->get_prox();
+        iteradorDep++; //vai para o proximo elemento da lista
     }
     gravadorDep.close(); // fecha o arquivo
 

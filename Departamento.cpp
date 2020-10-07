@@ -7,7 +7,8 @@ using std::cout;
 using std::endl;
 
  Departamento::Departamento(const char* pNome, int i):
- objLDisciplinas(-1)
+ objLDisciplinas(-1),
+ flag(true)
  {
     id = i;
     strcpy(nome,pNome);
@@ -68,4 +69,13 @@ void Departamento::liste_disciplinas2()
 {
     cout<<"-="<<nome<<"=-"<<endl;
     objLDisciplinas.liste_disciplinas2();
+}
+
+void Departamento::set_dynamic(bool f)
+{
+    flag = f;
+}
+bool Departamento::dynamic()
+{
+    return flag;
 }

@@ -1,12 +1,14 @@
 #pragma once
 
 #include "Departamento.hpp"
-#include "Lista.hpp"
+#include <vector>
 
 class ListaDepartamentos
 {
     protected:
-        Lista<Departamento> LTDepart;
+        std::vector<Departamento*> LTDepart;
+        std::vector<Departamento*>::reverse_iterator rIterador;
+        std::vector<Departamento*>::iterator iteradorDep;
         int numeroDepart;
         int contDP;
 

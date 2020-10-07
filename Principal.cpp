@@ -124,6 +124,10 @@ void Principal::inicializa_universidade()
     objMenu.cadastre_univer(&Princeton);
     objMenu.cadastre_univer(&Cambridge);
     objMenu.cadastre_univer(&UTFPR);
+    //informando que objetos nao estao alocados dinamicamente
+    Princeton.set_dynamic(false);
+    Cambridge.set_dynamic(false);
+    UTFPR.set_dynamic(false);
 
 }
 
@@ -140,6 +144,12 @@ void Principal::inicializa_departamento()
     objMenu.cadastre_depart(&Matematica);
     objMenu.cadastre_depart(&Astronomia);
     objMenu.cadastre_depart(&DAELN);
+
+    //informa que objetos foram alocados de forma estatica e nao de forma dinamica
+    Fisica.set_dynamic(false);
+    Matematica.set_dynamic(false);
+    Astronomia.set_dynamic(false);
+    DAELN.set_dynamic(false);
 }
 
 void Principal::inicializa_disciplina()

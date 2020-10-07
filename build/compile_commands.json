@@ -1,140 +1,117 @@
 [
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/main.cpp.o' -MF 'exe@exe/main.cpp.o.d' -o 'exe@exe/main.cpp.o' -c ../main.cpp",
-    "file": "../main.cpp",
-    "output": "exe@exe/main.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/main.cpp.o' -MF 'exe@exe/main.cpp.o.d' -o 'exe@exe/main.cpp.o' -c ../main.cpp",
+    "file": "../main.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Menu.cpp.o' -MF 'exe@exe/Menu.cpp.o.d' -o 'exe@exe/Menu.cpp.o' -c ../Menu.cpp",
-    "file": "../Menu.cpp",
-    "output": "exe@exe/Menu.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Menu.cpp.o' -MF 'exe@exe/Menu.cpp.o.d' -o 'exe@exe/Menu.cpp.o' -c ../Menu.cpp",
+    "file": "../Menu.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Conhecimento.cpp.o' -MF 'exe@exe/Conhecimento.cpp.o.d' -o 'exe@exe/Conhecimento.cpp.o' -c ../Conhecimento.cpp",
-    "file": "../Conhecimento.cpp",
-    "output": "exe@exe/Conhecimento.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Conhecimento.cpp.o' -MF 'exe@exe/Conhecimento.cpp.o.d' -o 'exe@exe/Conhecimento.cpp.o' -c ../Conhecimento.cpp",
+    "file": "../Conhecimento.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Estagiario.cpp.o' -MF 'exe@exe/Estagiario.cpp.o.d' -o 'exe@exe/Estagiario.cpp.o' -c ../Estagiario.cpp",
-    "file": "../Estagiario.cpp",
-    "output": "exe@exe/Estagiario.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Estagiario.cpp.o' -MF 'exe@exe/Estagiario.cpp.o.d' -o 'exe@exe/Estagiario.cpp.o' -c ../Estagiario.cpp",
+    "file": "../Estagiario.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaPessoas.cpp.o' -MF 'exe@exe/ListaPessoas.cpp.o.d' -o 'exe@exe/ListaPessoas.cpp.o' -c ../ListaPessoas.cpp",
-    "file": "../ListaPessoas.cpp",
-    "output": "exe@exe/ListaPessoas.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaPessoas.cpp.o' -MF 'exe@exe/ListaPessoas.cpp.o.d' -o 'exe@exe/ListaPessoas.cpp.o' -c ../ListaPessoas.cpp",
+    "file": "../ListaPessoas.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaProfessoresGravadora.cpp.o' -MF 'exe@exe/ListaProfessoresGravadora.cpp.o.d' -o 'exe@exe/ListaProfessoresGravadora.cpp.o' -c ../ListaProfessoresGravadora.cpp",
-    "file": "../ListaProfessoresGravadora.cpp",
-    "output": "exe@exe/ListaProfessoresGravadora.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaProfessoresGravadora.cpp.o' -MF 'exe@exe/ListaProfessoresGravadora.cpp.o.d' -o 'exe@exe/ListaProfessoresGravadora.cpp.o' -c ../ListaProfessoresGravadora.cpp",
+    "file": "../ListaProfessoresGravadora.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaAlunosGravadora.cpp.o' -MF 'exe@exe/ListaAlunosGravadora.cpp.o.d' -o 'exe@exe/ListaAlunosGravadora.cpp.o' -c ../ListaAlunosGravadora.cpp",
-    "file": "../ListaAlunosGravadora.cpp",
-    "output": "exe@exe/ListaAlunosGravadora.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaAlunosGravadora.cpp.o' -MF 'exe@exe/ListaAlunosGravadora.cpp.o.d' -o 'exe@exe/ListaAlunosGravadora.cpp.o' -c ../ListaAlunosGravadora.cpp",
+    "file": "../ListaAlunosGravadora.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaDisciplinasGravadora.cpp.o' -MF 'exe@exe/ListaDisciplinasGravadora.cpp.o.d' -o 'exe@exe/ListaDisciplinasGravadora.cpp.o' -c ../ListaDisciplinasGravadora.cpp",
-    "file": "../ListaDisciplinasGravadora.cpp",
-    "output": "exe@exe/ListaDisciplinasGravadora.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaDisciplinasGravadora.cpp.o' -MF 'exe@exe/ListaDisciplinasGravadora.cpp.o.d' -o 'exe@exe/ListaDisciplinasGravadora.cpp.o' -c ../ListaDisciplinasGravadora.cpp",
+    "file": "../ListaDisciplinasGravadora.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaUnivGravadora.cpp.o' -MF 'exe@exe/ListaUnivGravadora.cpp.o.d' -o 'exe@exe/ListaUnivGravadora.cpp.o' -c ../ListaUnivGravadora.cpp",
-    "file": "../ListaUnivGravadora.cpp",
-    "output": "exe@exe/ListaUnivGravadora.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaUnivGravadora.cpp.o' -MF 'exe@exe/ListaUnivGravadora.cpp.o.d' -o 'exe@exe/ListaUnivGravadora.cpp.o' -c ../ListaUnivGravadora.cpp",
+    "file": "../ListaUnivGravadora.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaDepartGravadora.cpp.o' -MF 'exe@exe/ListaDepartGravadora.cpp.o.d' -o 'exe@exe/ListaDepartGravadora.cpp.o' -c ../ListaDepartGravadora.cpp",
-    "file": "../ListaDepartGravadora.cpp",
-    "output": "exe@exe/ListaDepartGravadora.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaDepartGravadora.cpp.o' -MF 'exe@exe/ListaDepartGravadora.cpp.o.d' -o 'exe@exe/ListaDepartGravadora.cpp.o' -c ../ListaDepartGravadora.cpp",
+    "file": "../ListaDepartGravadora.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaProfessores.cpp.o' -MF 'exe@exe/ListaProfessores.cpp.o.d' -o 'exe@exe/ListaProfessores.cpp.o' -c ../ListaProfessores.cpp",
-    "file": "../ListaProfessores.cpp",
-    "output": "exe@exe/ListaProfessores.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaProfessores.cpp.o' -MF 'exe@exe/ListaProfessores.cpp.o.d' -o 'exe@exe/ListaProfessores.cpp.o' -c ../ListaProfessores.cpp",
+    "file": "../ListaProfessores.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaUniversidades.cpp.o' -MF 'exe@exe/ListaUniversidades.cpp.o.d' -o 'exe@exe/ListaUniversidades.cpp.o' -c ../ListaUniversidades.cpp",
-    "file": "../ListaUniversidades.cpp",
-    "output": "exe@exe/ListaUniversidades.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaUniversidades.cpp.o' -MF 'exe@exe/ListaUniversidades.cpp.o.d' -o 'exe@exe/ListaUniversidades.cpp.o' -c ../ListaUniversidades.cpp",
+    "file": "../ListaUniversidades.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Aluno.cpp.o' -MF 'exe@exe/Aluno.cpp.o.d' -o 'exe@exe/Aluno.cpp.o' -c ../Aluno.cpp",
-    "file": "../Aluno.cpp",
-    "output": "exe@exe/Aluno.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Aluno.cpp.o' -MF 'exe@exe/Aluno.cpp.o.d' -o 'exe@exe/Aluno.cpp.o' -c ../Aluno.cpp",
+    "file": "../Aluno.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Departamento.cpp.o' -MF 'exe@exe/Departamento.cpp.o.d' -o 'exe@exe/Departamento.cpp.o' -c ../Departamento.cpp",
-    "file": "../Departamento.cpp",
-    "output": "exe@exe/Departamento.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Departamento.cpp.o' -MF 'exe@exe/Departamento.cpp.o.d' -o 'exe@exe/Departamento.cpp.o' -c ../Departamento.cpp",
+    "file": "../Departamento.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Disciplina.cpp.o' -MF 'exe@exe/Disciplina.cpp.o.d' -o 'exe@exe/Disciplina.cpp.o' -c ../Disciplina.cpp",
-    "file": "../Disciplina.cpp",
-    "output": "exe@exe/Disciplina.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Disciplina.cpp.o' -MF 'exe@exe/Disciplina.cpp.o.d' -o 'exe@exe/Disciplina.cpp.o' -c ../Disciplina.cpp",
+    "file": "../Disciplina.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaAlunos.cpp.o' -MF 'exe@exe/ListaAlunos.cpp.o.d' -o 'exe@exe/ListaAlunos.cpp.o' -c ../ListaAlunos.cpp",
-    "file": "../ListaAlunos.cpp",
-    "output": "exe@exe/ListaAlunos.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaAlunos.cpp.o' -MF 'exe@exe/ListaAlunos.cpp.o.d' -o 'exe@exe/ListaAlunos.cpp.o' -c ../ListaAlunos.cpp",
+    "file": "../ListaAlunos.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaDepartamentos.cpp.o' -MF 'exe@exe/ListaDepartamentos.cpp.o.d' -o 'exe@exe/ListaDepartamentos.cpp.o' -c ../ListaDepartamentos.cpp",
-    "file": "../ListaDepartamentos.cpp",
-    "output": "exe@exe/ListaDepartamentos.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaDepartamentos.cpp.o' -MF 'exe@exe/ListaDepartamentos.cpp.o.d' -o 'exe@exe/ListaDepartamentos.cpp.o' -c ../ListaDepartamentos.cpp",
+    "file": "../ListaDepartamentos.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/ListaDisciplinas.cpp.o' -MF 'exe@exe/ListaDisciplinas.cpp.o.d' -o 'exe@exe/ListaDisciplinas.cpp.o' -c ../ListaDisciplinas.cpp",
-    "file": "../ListaDisciplinas.cpp",
-    "output": "exe@exe/ListaDisciplinas.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/ListaDisciplinas.cpp.o' -MF 'exe@exe/ListaDisciplinas.cpp.o.d' -o 'exe@exe/ListaDisciplinas.cpp.o' -c ../ListaDisciplinas.cpp",
+    "file": "../ListaDisciplinas.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Nota.cpp.o' -MF 'exe@exe/Nota.cpp.o.d' -o 'exe@exe/Nota.cpp.o' -c ../Nota.cpp",
-    "file": "../Nota.cpp",
-    "output": "exe@exe/Nota.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Nota.cpp.o' -MF 'exe@exe/Nota.cpp.o.d' -o 'exe@exe/Nota.cpp.o' -c ../Nota.cpp",
+    "file": "../Nota.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Pessoa.cpp.o' -MF 'exe@exe/Pessoa.cpp.o.d' -o 'exe@exe/Pessoa.cpp.o' -c ../Pessoa.cpp",
-    "file": "../Pessoa.cpp",
-    "output": "exe@exe/Pessoa.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Pessoa.cpp.o' -MF 'exe@exe/Pessoa.cpp.o.d' -o 'exe@exe/Pessoa.cpp.o' -c ../Pessoa.cpp",
+    "file": "../Pessoa.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Principal.cpp.o' -MF 'exe@exe/Principal.cpp.o.d' -o 'exe@exe/Principal.cpp.o' -c ../Principal.cpp",
-    "file": "../Principal.cpp",
-    "output": "exe@exe/Principal.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Principal.cpp.o' -MF 'exe@exe/Principal.cpp.o.d' -o 'exe@exe/Principal.cpp.o' -c ../Principal.cpp",
+    "file": "../Principal.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Professor.cpp.o' -MF 'exe@exe/Professor.cpp.o.d' -o 'exe@exe/Professor.cpp.o' -c ../Professor.cpp",
-    "file": "../Professor.cpp",
-    "output": "exe@exe/Professor.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Professor.cpp.o' -MF 'exe@exe/Professor.cpp.o.d' -o 'exe@exe/Professor.cpp.o' -c ../Professor.cpp",
+    "file": "../Professor.cpp"
   },
   {
     "directory": "/home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build",
-    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'exe@exe/Universidade.cpp.o' -MF 'exe@exe/Universidade.cpp.o.d' -o 'exe@exe/Universidade.cpp.o' -c ../Universidade.cpp",
-    "file": "../Universidade.cpp",
-    "output": "exe@exe/Universidade.cpp.o"
+    "command": "c++ -Iexe@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g  -MD -MQ 'exe@exe/Universidade.cpp.o' -MF 'exe@exe/Universidade.cpp.o.d' -o 'exe@exe/Universidade.cpp.o' -c ../Universidade.cpp",
+    "file": "../Universidade.cpp"
   }
 ]

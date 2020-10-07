@@ -17,6 +17,7 @@ class Universidade
         int id;
         char nome[100];
         ListaDepartamentos objListDepart;
+        bool flag;
 
     public:
         Universidade(int i = -1, int nd = 150, const char *nome_uni = "");
@@ -32,7 +33,10 @@ class Universidade
         void liste_departamentos();
         void liste_departamentos2();
 
-    
+        //verifica se o objeto esta alocado de forma statica ou dinamica
+        void set_dynamic(bool f);
+        bool dynamic();
+        
 };
 
 

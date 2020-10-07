@@ -1,36 +1,31 @@
-Build started at 2020-09-03T15:40:42.844235
+Build started at 2020-09-30T22:19:23.090223
 Main binary: /usr/bin/python3
-Build Options: -Dbackend=ninja
 Python system: Linux
 The Meson build system
-Version: 0.54.0
+Version: 0.49.2
 Source dir: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico
 Build dir: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build
 Build type: native build
-Using 'PKG_CONFIG_PATH' from environment with value: '/home/renan/Documentos/SFML-2.5.1:/home/renan/Documentos/SFML-2.5.1'
-WARNING: PKG_CONFIG_PATH environment variable has changed between configurations, meson ignores this. Use -Dpkg_config_path to change pkg-config search path instead.
-Using 'PKG_CONFIG_PATH' from environment with value: '/home/renan/Documentos/SFML-2.5.1:/home/renan/Documentos/SFML-2.5.1'
-WARNING: PKG_CONFIG_PATH environment variable has changed between configurations, meson ignores this. Use -Dpkg_config_path to change pkg-config search path instead.
 Project name: Sistema Academico
 Project version: undefined
-C++ compiler for the build machine: c++ (gcc 8.3.0 "c++ (Debian 8.3.0-6) 8.3.0")
-C++ linker for the build machine: c++ ld.bfd 2.31.1
-None of 'AR' are defined in the environment, not changing global flags.
-C++ compiler for the host machine: c++ (gcc 8.3.0 "c++ (Debian 8.3.0-6) 8.3.0")
-C++ linker for the host machine: c++ ld.bfd 2.31.1
-None of 'AR' are defined in the environment, not changing global flags.
+Sanity testing C++ compiler: c++
+Is cross compiler: False.
+Sanity check compiler command line: c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/sanitycheckcpp.cc -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/sanitycheckcpp.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/sanitycheckcpp.exe
+Native C++ compiler: c++ (gcc 8.3.0 "c++ (Debian 8.3.0-6) 8.3.0")
 Build machine cpu family: x86_64
 Build machine cpu: x86_64
-Host machine cpu family: x86_64
-Host machine cpu: x86_64
-Target machine cpu family: x86_64
-Target machine cpu: x86_64
 Build targets in project: 1
-
-Found ninja-1.9.0.git.kitware.dyndep-1.jobserver-1 at /home/renan/.local/bin/ninja
+Found ninja-1.8.2 at /usr/bin/ninja
 Running compile:
-Working directory:  /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/tmptmipu4b9
-Command line:  c++ /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/tmptmipu4b9/testfile.cpp -o /home/renan/Documentos/TecProg_Estudo_Dirigido/CPP/codigos_cpp/Projeto_SistemaAcademico/build/meson-private/tmptmipu4b9/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /tmp/tmpsf1wkdew
+Command line:  c++ /tmp/tmpsf1wkdew/testfile.cpp -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmpsf1wkdew/output.obj -O0 -fpermissive --print-search-dirs 
 
 Code:
  
@@ -41,5 +36,3 @@ libraries: =/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../
 
 Compiler stderr:
  
-None of 'STRIP' are defined in the environment, not changing global flags.
-None of 'STRIP' are defined in the environment, not changing global flags.
